@@ -1,0 +1,4439 @@
+{
+  "capturedAt": "2026-10-23",
+  "figmaFileKey": "grgnOFjr54GkSROrTL0yCs",
+  "pageId": "5:8245",
+  "inventory": {
+    "page": "STAR JOURNEY · UNIFIED AUTH · 113 SCREENS",
+    "screenCount": 113,
+    "totalNodes": 8119,
+    "totalButtons": 136,
+    "totalLinks": 310,
+    "componentCount": 0,
+    "components": [],
+    "screens": [
+      {
+        "id": "5:8246",
+        "name": "welcome · CHÀO MỪNG + ĐĂNG NHẬP (UNIFIED)",
+        "n": 89,
+        "b": 4,
+        "l": 3
+      },
+      {
+        "id": "5:8332",
+        "name": "register · Tạo tài khoản",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:8396",
+        "name": "forgot_password · Khôi phục mật khẩu",
+        "n": 67,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:8460",
+        "name": "onboarding_band · Chọn mức nội dung",
+        "n": 74,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:8534",
+        "name": "onboarding_topics · Chọn chủ đề ưu tiên",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:8605",
+        "name": "onboarding_name · Tên hiển thị",
+        "n": 67,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:8672",
+        "name": "home · Học",
+        "n": 97,
+        "b": 1,
+        "l": 8
+      },
+      {
+        "id": "5:8772",
+        "name": "catalog · Khám phá chủ đề",
+        "n": 92,
+        "b": 0,
+        "l": 9
+      },
+      {
+        "id": "5:8864",
+        "name": "topic_detail · Chủ đề Finance",
+        "n": 83,
+        "b": 0,
+        "l": 7
+      },
+      {
+        "id": "5:8947",
+        "name": "lesson_detail · Chi tiết bài học",
+        "n": 82,
+        "b": 1,
+        "l": 6
+      },
+      {
+        "id": "5:9030",
+        "name": "vocab_1 · Học từ vựng",
+        "n": 89,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:9115",
+        "name": "vocab_2 · Học từ vựng",
+        "n": 85,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9195",
+        "name": "vocab_3 · Học từ vựng",
+        "n": 85,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9275",
+        "name": "vocab_4 · Học từ vựng",
+        "n": 85,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9355",
+        "name": "vocab_5 · Học từ vựng",
+        "n": 85,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9435",
+        "name": "vocab_6 · Học từ vựng",
+        "n": 85,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9515",
+        "name": "vocab_7 · Học từ vựng",
+        "n": 85,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9595",
+        "name": "listening · Luyện nghe",
+        "n": 82,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9678",
+        "name": "listening_result · Kết quả nghe",
+        "n": 75,
+        "b": 3,
+        "l": 4
+      },
+      {
+        "id": "5:9753",
+        "name": "writing · Luyện viết",
+        "n": 87,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9841",
+        "name": "lesson_complete · Hoàn thành bài học",
+        "n": 84,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:9926",
+        "name": "writing_feedback · Nhận xét bài viết",
+        "n": 78,
+        "b": 3,
+        "l": 4
+      },
+      {
+        "id": "5:10004",
+        "name": "writing_revision · Sửa bài viết",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:10072",
+        "name": "review · Ôn tập",
+        "n": 87,
+        "b": 1,
+        "l": 7
+      },
+      {
+        "id": "5:10159",
+        "name": "review_detail · Chi tiết ôn tập",
+        "n": 69,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:10228",
+        "name": "review_vocab · Ôn từ vựng",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:10299",
+        "name": "review_listening · Nghe ôn tập",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:10367",
+        "name": "review_writing · Viết khi ôn",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:10435",
+        "name": "review_result · Kết quả ôn",
+        "n": 70,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:10505",
+        "name": "progress · Tiến độ",
+        "n": 128,
+        "b": 3,
+        "l": 10
+      },
+      {
+        "id": "5:10637",
+        "name": "activity · Hoạt động học tập",
+        "n": 81,
+        "b": 1,
+        "l": 6
+      },
+      {
+        "id": "5:10718",
+        "name": "lesson_history · Lịch sử bài học",
+        "n": 80,
+        "b": 0,
+        "l": 7
+      },
+      {
+        "id": "5:10798",
+        "name": "lesson_history_detail · Chi tiết lịch sử",
+        "n": 74,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:10872",
+        "name": "ranking · Xếp hạng",
+        "n": 86,
+        "b": 0,
+        "l": 4
+      },
+      {
+        "id": "5:10960",
+        "name": "report_name · Báo cáo tên",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11025",
+        "name": "profile · Hồ sơ",
+        "n": 92,
+        "b": 2,
+        "l": 10
+      },
+      {
+        "id": "5:11118",
+        "name": "profile_edit · Sửa tên hiển thị",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11183",
+        "name": "preferences · Tùy chọn học tập",
+        "n": 72,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11255",
+        "name": "notification_settings · Nhắc ôn tập",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11326",
+        "name": "account_settings · Tài khoản & bảo mật",
+        "n": 69,
+        "b": 0,
+        "l": 3
+      },
+      {
+        "id": "5:11395",
+        "name": "admin_topics · Admin · Chủ đề",
+        "n": 72,
+        "b": 3,
+        "l": 4
+      },
+      {
+        "id": "5:11467",
+        "name": "admin_editor · Admin · Soạn lesson",
+        "n": 94,
+        "b": 7,
+        "l": 8
+      },
+      {
+        "id": "5:11561",
+        "name": "STATE · auth_invalid · Không thể đăng nhập",
+        "n": 73,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:11634",
+        "name": "STATE · register_validation · Kiểm tra đăng ký",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11702",
+        "name": "STATE · reset_sent · Đã gửi yêu cầu",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11767",
+        "name": "STATE · session_expired · Phiên đăng nhập hết hạn",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11829",
+        "name": "STATE · onboarding_topics_error · Chưa chọn chủ đề",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:11894",
+        "name": "STATE · onboarding_name_error · Tên chưa phù hợp",
+        "n": 67,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:11961",
+        "name": "STATE · catalog_empty · Chưa có bài phù hợp",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12023",
+        "name": "catalog_search · Tìm bài học",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12091",
+        "name": "STATE · lesson_locked · Chưa thể sang bước sau",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12156",
+        "name": "STATE · lesson_continue · Tiếp tục bài dang dở",
+        "n": 67,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:12223",
+        "name": "STATE · vocab_audio_error · Không phát được phát âm",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12288",
+        "name": "vocab_situation · Tình huống sử dụng từ",
+        "n": 74,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12362",
+        "name": "STATE · listening_loading · Đang tải audio",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12427",
+        "name": "STATE · listening_audio_error · Lỗi tải bài nghe",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12492",
+        "name": "STATE · listening_not_finished · Chưa nghe hết audio",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12557",
+        "name": "STATE · listening_missing · Còn câu chưa trả lời",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12622",
+        "name": "STATE · listening_submitting · Đang nộp bài nghe",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12687",
+        "name": "listening_transcript · Transcript và giải thích",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12755",
+        "name": "listening_practice_again · Nghe luyện thêm",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12823",
+        "name": "STATE · writing_missing_target · Thiếu từ mục tiêu",
+        "n": 70,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:12893",
+        "name": "STATE · writing_validation · Câu viết cần sửa",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:12961",
+        "name": "STATE · writing_dictionary_warning · Cảnh báo ngôn ngữ",
+        "n": 67,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:13028",
+        "name": "STATE · writing_save_failed · Chưa lưu được bài",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13093",
+        "name": "STATE · writing_feedback_pending · AI đang nhận xét",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13158",
+        "name": "STATE · writing_feedback_deferred · AI tạm hoãn",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13226",
+        "name": "STATE · writing_feedback_error · Không tạo được nhận xét",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13291",
+        "name": "writing_feedback_detail · Phân tích câu viết",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13362",
+        "name": "STATE · writing_revision_success · Đã gửi bản sửa",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13427",
+        "name": "STATE · writing_revision_blocked · Đã hết lượt sửa",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13489",
+        "name": "STATE · lesson_points_capped · Điểm trong ngày",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13557",
+        "name": "STATE · review_today · Ôn tập đến hạn hôm nay",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13622",
+        "name": "STATE · review_upcoming · Ôn sắp tới",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13687",
+        "name": "STATE · review_expired · Mốc ôn đã hết hạn",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13752",
+        "name": "review_outside · Ôn ngoài mốc",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13817",
+        "name": "review_answer_reveal · Đáp án ôn tập",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13882",
+        "name": "STATE · review_revoked · Nội dung tạm dừng",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:13944",
+        "name": "review_notify_permission · Cho phép nhắc ôn",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14009",
+        "name": "progress_listening · Kết quả nghe lần đầu",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14074",
+        "name": "progress_streak · Chuỗi ngày học",
+        "n": 66,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14140",
+        "name": "progress_heatmap · Biểu đồ hoạt động",
+        "n": 105,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14245",
+        "name": "STATE · progress_empty · Chưa có hoạt động",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14307",
+        "name": "progress_points · Sổ điểm học tập",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14375",
+        "name": "ranking_month · Bảng xếp hạng tháng",
+        "n": 67,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14442",
+        "name": "ranking_alltime · Bảng xếp hạng toàn thời gian",
+        "n": 67,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14509",
+        "name": "STATE · ranking_no_listening · Chưa có tỷ lệ nghe",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14571",
+        "name": "STATE · ranking_report_success · Đã nhận báo cáo",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14633",
+        "name": "STATE · profile_name_cooldown · Chưa đến hạn đổi tên",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14698",
+        "name": "STATE · preferences_saved · Đã cập nhật lựa chọn",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14760",
+        "name": "STATE · notification_denied · Quyền thông báo đã tắt",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:14822",
+        "name": "profile_logout_confirm · Đăng xuất?",
+        "n": 64,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:14886",
+        "name": "admin_dashboard · Quản trị nội dung",
+        "n": 72,
+        "b": 0,
+        "l": 4
+      },
+      {
+        "id": "5:14958",
+        "name": "admin_lesson_list · Danh sách lesson",
+        "n": 70,
+        "b": 1,
+        "l": 4
+      },
+      {
+        "id": "5:15028",
+        "name": "admin_topic_edit · Tạo / sửa chủ đề",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15096",
+        "name": "admin_vocab_edit · Soạn từ vựng",
+        "n": 80,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15176",
+        "name": "admin_audio_tts · Tạo và duyệt audio",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15247",
+        "name": "admin_listening_edit · Soạn bài nghe",
+        "n": 77,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15324",
+        "name": "admin_writing_edit · Soạn đề viết",
+        "n": 74,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15398",
+        "name": "admin_preview · Xem trước lesson",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15463",
+        "name": "admin_publish_check · Kiểm tra xuất bản",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15534",
+        "name": "STATE · admin_publish_error · Lesson chưa hợp lệ",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15599",
+        "name": "STATE · admin_published · Phiên bản đã xuất bản",
+        "n": 67,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:15666",
+        "name": "admin_hide_confirm · Ẩn lesson?",
+        "n": 64,
+        "b": 2,
+        "l": 3
+      },
+      {
+        "id": "5:15730",
+        "name": "admin_revoke · Thu hồi phiên bản",
+        "n": 68,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15798",
+        "name": "admin_audit · Rà soát hoạt động",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "5:15869",
+        "name": "admin_name_reports · Báo cáo tên hiển thị",
+        "n": 65,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "17:3",
+        "name": "reset_password · Đặt mật khẩu mới",
+        "n": 67,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "17:70",
+        "name": "reset_complete · Đặt lại thành công",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "19:2",
+        "name": "change_password · Đổi mật khẩu",
+        "n": 71,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "19:73",
+        "name": "password_changed · Đổi mật khẩu thành công",
+        "n": 62,
+        "b": 1,
+        "l": 2
+      },
+      {
+        "id": "19:137",
+        "name": "active_sessions · Quản lý phiên",
+        "n": 69,
+        "b": 0,
+        "l": 2
+      },
+      {
+        "id": "20:2",
+        "name": "sessions_revoke_confirm · Đăng xuất tất cả?",
+        "n": 64,
+        "b": 2,
+        "l": 3
+      }
+    ]
+  },
+  "controls": [
+    [
+      "5:8246",
+      "23:2",
+      "ACTION · Hiện mật khẩu",
+      ""
+    ],
+    [
+      "5:8246",
+      "5:8323",
+      "ACTION · ĐĂNG NHẬP",
+      "5:8672"
+    ],
+    [
+      "5:8246",
+      "5:8326",
+      "ACTION · Tạo tài khoản",
+      "5:8332"
+    ],
+    [
+      "5:8246",
+      "5:8328",
+      "ACTION · Quên mật khẩu?",
+      "5:8396"
+    ],
+    [
+      "5:8332",
+      "5:8374",
+      "BACK button ←",
+      "5:8246"
+    ],
+    [
+      "5:8332",
+      "5:8394",
+      "BUTTON clickable · Tạo tài khoản",
+      "5:8460"
+    ],
+    [
+      "5:8396",
+      "5:8438",
+      "BACK button ←",
+      "5:8246"
+    ],
+    [
+      "5:8396",
+      "5:8458",
+      "BUTTON clickable · Gửi mã",
+      "5:11702"
+    ],
+    [
+      "5:8460",
+      "5:8502",
+      "BACK button ←",
+      "5:8246"
+    ],
+    [
+      "5:8460",
+      "5:8532",
+      "BUTTON clickable · Tiếp tục",
+      "5:8534"
+    ],
+    [
+      "5:8534",
+      "5:8576",
+      "BACK button ←",
+      "5:8460"
+    ],
+    [
+      "5:8534",
+      "5:8603",
+      "BUTTON clickable · Tiếp tục",
+      "5:8605"
+    ],
+    [
+      "5:8605",
+      "5:8647",
+      "BACK button ←",
+      "5:8534"
+    ],
+    [
+      "5:8605",
+      "5:8668",
+      "BUTTON clickable · Hoàn tất",
+      "5:8672"
+    ],
+    [
+      "5:8605",
+      "5:8670",
+      "BUTTON clickable · Bỏ qua",
+      "5:8672"
+    ],
+    [
+      "5:8672",
+      "5:8759",
+      "BUTTON clickable · Khám phá tất cả chủ đề",
+      "5:8772"
+    ],
+    [
+      "5:8772",
+      "5:8814",
+      "BACK button ←",
+      "5:8672"
+    ],
+    [
+      "5:8864",
+      "5:8906",
+      "BACK button ←",
+      "5:8772"
+    ],
+    [
+      "5:8947",
+      "5:8989",
+      "BACK button ←",
+      "5:8864"
+    ],
+    [
+      "5:8947",
+      "5:9017",
+      "BUTTON clickable · Bắt đầu bài học",
+      "5:9030"
+    ],
+    [
+      "5:9030",
+      "5:9072",
+      "BACK button ←",
+      "5:8947"
+    ],
+    [
+      "5:9030",
+      "5:9111",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9115"
+    ],
+    [
+      "5:9030",
+      "5:9113",
+      "BUTTON clickable · Xem toàn bộ ngữ cảnh",
+      "5:12288"
+    ],
+    [
+      "5:9115",
+      "5:9157",
+      "BACK button ←",
+      "5:9030"
+    ],
+    [
+      "5:9115",
+      "5:9193",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9195"
+    ],
+    [
+      "5:9195",
+      "5:9237",
+      "BACK button ←",
+      "5:9115"
+    ],
+    [
+      "5:9195",
+      "5:9273",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9275"
+    ],
+    [
+      "5:9275",
+      "5:9317",
+      "BACK button ←",
+      "5:9195"
+    ],
+    [
+      "5:9275",
+      "5:9353",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9355"
+    ],
+    [
+      "5:9355",
+      "5:9397",
+      "BACK button ←",
+      "5:9275"
+    ],
+    [
+      "5:9355",
+      "5:9433",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9435"
+    ],
+    [
+      "5:9435",
+      "5:9477",
+      "BACK button ←",
+      "5:9355"
+    ],
+    [
+      "5:9435",
+      "5:9513",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9515"
+    ],
+    [
+      "5:9515",
+      "5:9557",
+      "BACK button ←",
+      "5:9435"
+    ],
+    [
+      "5:9515",
+      "5:9593",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9595"
+    ],
+    [
+      "5:9595",
+      "5:9637",
+      "BACK button ←",
+      "5:9515"
+    ],
+    [
+      "5:9595",
+      "5:9676",
+      "BUTTON clickable · Nộp bài nghe",
+      "5:9678"
+    ],
+    [
+      "5:9678",
+      "5:9720",
+      "BACK button ←",
+      "5:9595"
+    ],
+    [
+      "5:9678",
+      "5:9747",
+      "BUTTON clickable · Tiếp tục đến phần viết",
+      "5:9753"
+    ],
+    [
+      "5:9678",
+      "5:9749",
+      "BUTTON clickable · Xem transcript",
+      "5:12687"
+    ],
+    [
+      "5:9678",
+      "5:9751",
+      "BUTTON clickable · Nghe luyện thêm",
+      "5:12755"
+    ],
+    [
+      "5:9753",
+      "5:9795",
+      "BACK button ←",
+      "5:9678"
+    ],
+    [
+      "5:9753",
+      "5:9839",
+      "BUTTON clickable · Nộp bài viết",
+      "5:9841"
+    ],
+    [
+      "5:9841",
+      "5:9883",
+      "BACK button ←",
+      "5:9753"
+    ],
+    [
+      "5:9841",
+      "5:9924",
+      "BUTTON clickable · Về trang học",
+      "5:8672"
+    ],
+    [
+      "5:9926",
+      "5:9968",
+      "BACK button ←",
+      "5:9841"
+    ],
+    [
+      "5:9926",
+      "5:9998",
+      "BUTTON clickable · Sửa câu một lần",
+      "5:10004"
+    ],
+    [
+      "5:9926",
+      "5:10000",
+      "BUTTON clickable · Xem lịch sử học",
+      "5:10718"
+    ],
+    [
+      "5:9926",
+      "5:10002",
+      "BUTTON clickable · Chi tiết nhận xét",
+      "5:13291"
+    ],
+    [
+      "5:10004",
+      "5:10046",
+      "BACK button ←",
+      "5:9926"
+    ],
+    [
+      "5:10004",
+      "5:10070",
+      "BUTTON clickable · Gửi bản sửa",
+      "5:9926"
+    ],
+    [
+      "5:10072",
+      "5:10146",
+      "BUTTON clickable · Bật nhắc ôn",
+      "5:13944"
+    ],
+    [
+      "5:10159",
+      "5:10201",
+      "BACK button ←",
+      "5:10072"
+    ],
+    [
+      "5:10159",
+      "5:10226",
+      "BUTTON clickable · Bắt đầu ôn",
+      "5:10228"
+    ],
+    [
+      "5:10228",
+      "5:10270",
+      "BACK button ←",
+      "5:10159"
+    ],
+    [
+      "5:10228",
+      "5:10297",
+      "BUTTON clickable · Tiếp tục nghe",
+      "5:10299"
+    ],
+    [
+      "5:10299",
+      "5:10341",
+      "BACK button ←",
+      "5:10228"
+    ],
+    [
+      "5:10299",
+      "5:10365",
+      "BUTTON clickable · Tiếp tục viết",
+      "5:10367"
+    ],
+    [
+      "5:10367",
+      "5:10409",
+      "BACK button ←",
+      "5:10299"
+    ],
+    [
+      "5:10367",
+      "5:10433",
+      "BUTTON clickable · Nộp bài ôn",
+      "5:10435"
+    ],
+    [
+      "5:10435",
+      "5:10477",
+      "BACK button ←",
+      "5:10367"
+    ],
+    [
+      "5:10435",
+      "5:10501",
+      "BUTTON clickable · Về ôn tập",
+      "5:10072"
+    ],
+    [
+      "5:10435",
+      "5:10503",
+      "BUTTON clickable · Đáp án sau khi nộp",
+      "5:13817"
+    ],
+    [
+      "5:10505",
+      "5:10620",
+      "BUTTON clickable · Chi tiết hoạt động",
+      "5:10637"
+    ],
+    [
+      "5:10505",
+      "5:10622",
+      "BUTTON clickable · Kết quả nghe đầu",
+      "5:14009"
+    ],
+    [
+      "5:10505",
+      "5:10624",
+      "BUTTON clickable · Sổ điểm",
+      "5:14307"
+    ],
+    [
+      "5:10637",
+      "5:10679",
+      "BACK button ←",
+      "5:10505"
+    ],
+    [
+      "5:10637",
+      "5:10705",
+      "BUTTON clickable · Quay lại tiến độ",
+      "5:10505"
+    ],
+    [
+      "5:10718",
+      "5:10760",
+      "BACK button ←",
+      "5:10505"
+    ],
+    [
+      "5:10798",
+      "5:10840",
+      "BACK button ←",
+      "5:10718"
+    ],
+    [
+      "5:10798",
+      "5:10870",
+      "BUTTON clickable · Xem phản hồi viết",
+      "5:9926"
+    ],
+    [
+      "5:10960",
+      "5:11002",
+      "BACK button ←",
+      "5:10872"
+    ],
+    [
+      "5:10960",
+      "5:11023",
+      "BUTTON clickable · Gửi báo cáo",
+      "5:10872"
+    ],
+    [
+      "5:11025",
+      "5:11103",
+      "BUTTON clickable · Sửa tên hiển thị",
+      "5:11118"
+    ],
+    [
+      "5:11025",
+      "5:11105",
+      "BUTTON clickable · Đăng xuất",
+      "5:14822"
+    ],
+    [
+      "5:11118",
+      "5:11160",
+      "BACK button ←",
+      "5:11025"
+    ],
+    [
+      "5:11118",
+      "5:11181",
+      "BUTTON clickable · Lưu thay đổi",
+      "5:11025"
+    ],
+    [
+      "5:11183",
+      "5:11225",
+      "BACK button ←",
+      "5:11025"
+    ],
+    [
+      "5:11183",
+      "5:11253",
+      "BUTTON clickable · Lưu lựa chọn",
+      "5:11025"
+    ],
+    [
+      "5:11255",
+      "5:11297",
+      "BACK button ←",
+      "5:11025"
+    ],
+    [
+      "5:11255",
+      "5:11324",
+      "BUTTON clickable · Lưu",
+      "5:11025"
+    ],
+    [
+      "5:11326",
+      "5:11368",
+      "BACK button ←",
+      "5:11025"
+    ],
+    [
+      "5:11395",
+      "5:11437",
+      "BACK button ←",
+      "5:11025"
+    ],
+    [
+      "5:11395",
+      "5:11461",
+      "BUTTON clickable · Soạn lesson",
+      "5:11467"
+    ],
+    [
+      "5:11395",
+      "5:11463",
+      "BUTTON clickable · Tạo / sửa chủ đề",
+      "5:15028"
+    ],
+    [
+      "5:11395",
+      "5:11465",
+      "BUTTON clickable · Quản lý lesson",
+      "5:14958"
+    ],
+    [
+      "5:11467",
+      "5:11509",
+      "BACK button ←",
+      "5:11395"
+    ],
+    [
+      "5:11467",
+      "5:11547",
+      "BUTTON clickable · Xem trước learner",
+      "5:8947"
+    ],
+    [
+      "5:11467",
+      "5:11549",
+      "BUTTON clickable · Soạn từ vựng",
+      "5:15096"
+    ],
+    [
+      "5:11467",
+      "5:11551",
+      "BUTTON clickable · Tạo / duyệt TTS",
+      "5:15176"
+    ],
+    [
+      "5:11467",
+      "5:11553",
+      "BUTTON clickable · Soạn bài nghe",
+      "5:15247"
+    ],
+    [
+      "5:11467",
+      "5:11555",
+      "BUTTON clickable · Soạn bài viết",
+      "5:15324"
+    ],
+    [
+      "5:11467",
+      "5:11557",
+      "BUTTON clickable · Xem trước",
+      "5:15398"
+    ],
+    [
+      "5:11467",
+      "5:11559",
+      "BUTTON clickable · Kiểm tra xuất bản",
+      "5:15463"
+    ],
+    [
+      "5:11561",
+      "5:11603",
+      "BACK button ←",
+      "5:8246"
+    ],
+    [
+      "5:11561",
+      "5:11630",
+      "BUTTON clickable · Thử lại",
+      "5:8246"
+    ],
+    [
+      "5:11561",
+      "5:11632",
+      "BUTTON clickable · Quên mật khẩu",
+      "5:8396"
+    ],
+    [
+      "5:11634",
+      "5:11676",
+      "BACK button ←",
+      "5:8332"
+    ],
+    [
+      "5:11634",
+      "5:11700",
+      "BUTTON clickable · Sửa thông tin",
+      "5:8332"
+    ],
+    [
+      "5:11702",
+      "5:11744",
+      "BACK button ←",
+      "5:8396"
+    ],
+    [
+      "5:11702",
+      "5:11765",
+      "BUTTON clickable · Xác minh mã",
+      "17:3"
+    ],
+    [
+      "5:11767",
+      "5:11809",
+      "BACK button ←",
+      "5:8246"
+    ],
+    [
+      "5:11767",
+      "5:11827",
+      "BUTTON clickable · Đăng nhập",
+      "5:8246"
+    ],
+    [
+      "5:11829",
+      "5:11871",
+      "BACK button ←",
+      "5:8534"
+    ],
+    [
+      "5:11829",
+      "5:11892",
+      "BUTTON clickable · Chọn chủ đề",
+      "5:8534"
+    ],
+    [
+      "5:11894",
+      "5:11936",
+      "BACK button ←",
+      "5:8605"
+    ],
+    [
+      "5:11894",
+      "5:11957",
+      "BUTTON clickable · Sửa tên",
+      "5:8605"
+    ],
+    [
+      "5:11894",
+      "5:11959",
+      "BUTTON clickable · Bỏ qua",
+      "5:8672"
+    ],
+    [
+      "5:11961",
+      "5:12003",
+      "BACK button ←",
+      "5:8772"
+    ],
+    [
+      "5:11961",
+      "5:12021",
+      "BUTTON clickable · Đổi bộ lọc",
+      "5:8772"
+    ],
+    [
+      "5:12023",
+      "5:12065",
+      "BACK button ←",
+      "5:8772"
+    ],
+    [
+      "5:12023",
+      "5:12089",
+      "BUTTON clickable · Xem tất cả",
+      "5:8772"
+    ],
+    [
+      "5:12091",
+      "5:12133",
+      "BACK button ←",
+      "5:8947"
+    ],
+    [
+      "5:12091",
+      "5:12154",
+      "BUTTON clickable · Trở lại bài học",
+      "5:8947"
+    ],
+    [
+      "5:12156",
+      "5:12198",
+      "BACK button ←",
+      "5:8947"
+    ],
+    [
+      "5:12156",
+      "5:12219",
+      "BUTTON clickable · Tiếp tục học từ",
+      "5:9030"
+    ],
+    [
+      "5:12156",
+      "5:12221",
+      "BUTTON clickable · Trở lại chủ đề",
+      "5:8864"
+    ],
+    [
+      "5:12223",
+      "5:12265",
+      "BACK button ←",
+      "5:9030"
+    ],
+    [
+      "5:12223",
+      "5:12286",
+      "BUTTON clickable · Thử phát lại",
+      "5:9030"
+    ],
+    [
+      "5:12288",
+      "5:12330",
+      "BACK button ←",
+      "5:9030"
+    ],
+    [
+      "5:12288",
+      "5:12360",
+      "BUTTON clickable · Tiếp tục",
+      "5:9115"
+    ],
+    [
+      "5:12362",
+      "5:12404",
+      "BACK button ←",
+      "5:9595"
+    ],
+    [
+      "5:12362",
+      "5:12425",
+      "BUTTON clickable · Quay về luyện nghe",
+      "5:9595"
+    ],
+    [
+      "5:12427",
+      "5:12469",
+      "BACK button ←",
+      "5:9595"
+    ],
+    [
+      "5:12427",
+      "5:12490",
+      "BUTTON clickable · Tải lại audio",
+      "5:9595"
+    ],
+    [
+      "5:12492",
+      "5:12534",
+      "BACK button ←",
+      "5:9595"
+    ],
+    [
+      "5:12492",
+      "5:12555",
+      "BUTTON clickable · Tiếp tục nghe",
+      "5:9595"
+    ],
+    [
+      "5:12557",
+      "5:12599",
+      "BACK button ←",
+      "5:9595"
+    ],
+    [
+      "5:12557",
+      "5:12620",
+      "BUTTON clickable · Quay lại bài nghe",
+      "5:9595"
+    ],
+    [
+      "5:12622",
+      "5:12664",
+      "BACK button ←",
+      "5:9595"
+    ],
+    [
+      "5:12622",
+      "5:12685",
+      "BUTTON clickable · Xem kết quả khi hoàn tất",
+      "5:9678"
+    ],
+    [
+      "5:12687",
+      "5:12729",
+      "BACK button ←",
+      "5:9678"
+    ],
+    [
+      "5:12687",
+      "5:12753",
+      "BUTTON clickable · Viết câu vận dụng",
+      "5:9753"
+    ],
+    [
+      "5:12755",
+      "5:12797",
+      "BACK button ←",
+      "5:9678"
+    ],
+    [
+      "5:12755",
+      "5:12821",
+      "BUTTON clickable · Bắt đầu luyện thêm",
+      "5:9595"
+    ],
+    [
+      "5:12823",
+      "5:12865",
+      "BACK button ←",
+      "5:9753"
+    ],
+    [
+      "5:12823",
+      "5:12889",
+      "BUTTON clickable · Sửa câu",
+      "5:9753"
+    ],
+    [
+      "5:12823",
+      "5:12891",
+      "BUTTON clickable · Vẫn nộp hợp lệ",
+      "5:9841"
+    ],
+    [
+      "5:12893",
+      "5:12935",
+      "BACK button ←",
+      "5:9753"
+    ],
+    [
+      "5:12893",
+      "5:12959",
+      "BUTTON clickable · Sửa từng câu",
+      "5:9753"
+    ],
+    [
+      "5:12961",
+      "5:13003",
+      "BACK button ←",
+      "5:9753"
+    ],
+    [
+      "5:12961",
+      "5:13024",
+      "BUTTON clickable · Sửa câu",
+      "5:9753"
+    ],
+    [
+      "5:12961",
+      "5:13026",
+      "BUTTON clickable · Vẫn nộp",
+      "5:9841"
+    ],
+    [
+      "5:13028",
+      "5:13070",
+      "BACK button ←",
+      "5:9753"
+    ],
+    [
+      "5:13028",
+      "5:13091",
+      "BUTTON clickable · Thử gửi lại",
+      "5:9753"
+    ],
+    [
+      "5:13093",
+      "5:13135",
+      "BACK button ←",
+      "5:9841"
+    ],
+    [
+      "5:13093",
+      "5:13156",
+      "BUTTON clickable · Xem trạng thái nhận xét",
+      "5:9926"
+    ],
+    [
+      "5:13158",
+      "5:13200",
+      "BACK button ←",
+      "5:9926"
+    ],
+    [
+      "5:13158",
+      "5:13224",
+      "BUTTON clickable · Quay về bài học",
+      "5:9841"
+    ],
+    [
+      "5:13226",
+      "5:13268",
+      "BACK button ←",
+      "5:9926"
+    ],
+    [
+      "5:13226",
+      "5:13289",
+      "BUTTON clickable · Thử nhận xét lại",
+      "5:9926"
+    ],
+    [
+      "5:13291",
+      "5:13333",
+      "BACK button ←",
+      "5:9926"
+    ],
+    [
+      "5:13291",
+      "5:13360",
+      "BUTTON clickable · Sửa câu một lần",
+      "5:10004"
+    ],
+    [
+      "5:13362",
+      "5:13404",
+      "BACK button ←",
+      "5:10004"
+    ],
+    [
+      "5:13362",
+      "5:13425",
+      "BUTTON clickable · Xem nhận xét mới",
+      "5:9926"
+    ],
+    [
+      "5:13427",
+      "5:13469",
+      "BACK button ←",
+      "5:10004"
+    ],
+    [
+      "5:13427",
+      "5:13487",
+      "BUTTON clickable · Xem lịch sử nhận xét",
+      "5:9926"
+    ],
+    [
+      "5:13489",
+      "5:13531",
+      "BACK button ←",
+      "5:9841"
+    ],
+    [
+      "5:13489",
+      "5:13555",
+      "BUTTON clickable · Xem tiến độ",
+      "5:10505"
+    ],
+    [
+      "5:13557",
+      "5:13599",
+      "BACK button ←",
+      "5:10072"
+    ],
+    [
+      "5:13557",
+      "5:13620",
+      "BUTTON clickable · Ôn ngay",
+      "5:10159"
+    ],
+    [
+      "5:13622",
+      "5:13664",
+      "BACK button ←",
+      "5:10072"
+    ],
+    [
+      "5:13622",
+      "5:13685",
+      "BUTTON clickable · Xem lịch ôn",
+      "5:10072"
+    ],
+    [
+      "5:13687",
+      "5:13729",
+      "BACK button ←",
+      "5:10072"
+    ],
+    [
+      "5:13687",
+      "5:13750",
+      "BUTTON clickable · Ôn ngoài mốc",
+      "5:10159"
+    ],
+    [
+      "5:13752",
+      "5:13794",
+      "BACK button ←",
+      "5:10072"
+    ],
+    [
+      "5:13752",
+      "5:13815",
+      "BUTTON clickable · Bắt đầu ôn",
+      "5:10228"
+    ],
+    [
+      "5:13817",
+      "5:13859",
+      "BACK button ←",
+      "5:10435"
+    ],
+    [
+      "5:13817",
+      "5:13880",
+      "BUTTON clickable · Xem kết quả ôn",
+      "5:10435"
+    ],
+    [
+      "5:13882",
+      "5:13924",
+      "BACK button ←",
+      "5:10072"
+    ],
+    [
+      "5:13882",
+      "5:13942",
+      "BUTTON clickable · Quay về Ôn tập",
+      "5:10072"
+    ],
+    [
+      "5:13944",
+      "5:13986",
+      "BACK button ←",
+      "5:11255"
+    ],
+    [
+      "5:13944",
+      "5:14007",
+      "BUTTON clickable · Thiết lập nhắc ôn",
+      "5:11255"
+    ],
+    [
+      "5:14009",
+      "5:14051",
+      "BACK button ←",
+      "5:10505"
+    ],
+    [
+      "5:14009",
+      "5:14072",
+      "BUTTON clickable · Xem lịch sử",
+      "5:10718"
+    ],
+    [
+      "5:14074",
+      "5:14116",
+      "BACK button ←",
+      "5:10505"
+    ],
+    [
+      "5:14074",
+      "5:14138",
+      "BUTTON clickable · Tiến độ",
+      "5:10505"
+    ],
+    [
+      "5:14140",
+      "5:14182",
+      "BACK button ←",
+      "5:10505"
+    ],
+    [
+      "5:14140",
+      "5:14243",
+      "BUTTON clickable · Quay về tiến độ",
+      "5:10505"
+    ],
+    [
+      "5:14245",
+      "5:14287",
+      "BACK button ←",
+      "5:10505"
+    ],
+    [
+      "5:14245",
+      "5:14305",
+      "BUTTON clickable · Bắt đầu học",
+      "5:8672"
+    ],
+    [
+      "5:14307",
+      "5:14349",
+      "BACK button ←",
+      "5:10505"
+    ],
+    [
+      "5:14307",
+      "5:14373",
+      "BUTTON clickable · Xem thứ hạng",
+      "5:10872"
+    ],
+    [
+      "5:14375",
+      "5:14417",
+      "BACK button ←",
+      "5:10872"
+    ],
+    [
+      "5:14375",
+      "5:14440",
+      "BUTTON clickable · Bảng tuần",
+      "5:10872"
+    ],
+    [
+      "5:14442",
+      "5:14484",
+      "BACK button ←",
+      "5:10872"
+    ],
+    [
+      "5:14442",
+      "5:14507",
+      "BUTTON clickable · Bảng tuần",
+      "5:10872"
+    ],
+    [
+      "5:14509",
+      "5:14551",
+      "BACK button ←",
+      "5:10872"
+    ],
+    [
+      "5:14509",
+      "5:14569",
+      "BUTTON clickable · Trở lại bảng xếp hạng",
+      "5:10872"
+    ],
+    [
+      "5:14571",
+      "5:14613",
+      "BACK button ←",
+      "5:10960"
+    ],
+    [
+      "5:14571",
+      "5:14631",
+      "BUTTON clickable · Quay về xếp hạng",
+      "5:10872"
+    ],
+    [
+      "5:14633",
+      "5:14675",
+      "BACK button ←",
+      "5:11118"
+    ],
+    [
+      "5:14633",
+      "5:14696",
+      "BUTTON clickable · Hồ sơ",
+      "5:11025"
+    ],
+    [
+      "5:14698",
+      "5:14740",
+      "BACK button ←",
+      "5:11183"
+    ],
+    [
+      "5:14698",
+      "5:14758",
+      "BUTTON clickable · Về hồ sơ",
+      "5:11025"
+    ],
+    [
+      "5:14760",
+      "5:14802",
+      "BACK button ←",
+      "5:11255"
+    ],
+    [
+      "5:14760",
+      "5:14820",
+      "BUTTON clickable · Về ôn tập",
+      "5:10072"
+    ],
+    [
+      "5:14822",
+      "5:14864",
+      "BACK button ←",
+      "5:11025"
+    ],
+    [
+      "5:14822",
+      "5:14882",
+      "BUTTON clickable · Hủy",
+      "5:11025"
+    ],
+    [
+      "5:14822",
+      "5:14884",
+      "BUTTON clickable · Đăng xuất",
+      "5:8246"
+    ],
+    [
+      "5:14886",
+      "5:14928",
+      "BACK button ←",
+      "5:11025"
+    ],
+    [
+      "5:14958",
+      "5:15000",
+      "BACK button ←",
+      "5:14886"
+    ],
+    [
+      "5:14958",
+      "5:15026",
+      "BUTTON clickable · Tạo lesson",
+      "5:11467"
+    ],
+    [
+      "5:15028",
+      "5:15070",
+      "BACK button ←",
+      "5:11395"
+    ],
+    [
+      "5:15028",
+      "5:15094",
+      "BUTTON clickable · Lưu chủ đề",
+      "5:11395"
+    ],
+    [
+      "5:15096",
+      "5:15138",
+      "BACK button ←",
+      "5:11467"
+    ],
+    [
+      "5:15096",
+      "5:15174",
+      "BUTTON clickable · Lưu từ vựng",
+      "5:11467"
+    ],
+    [
+      "5:15176",
+      "5:15218",
+      "BACK button ←",
+      "5:11467"
+    ],
+    [
+      "5:15176",
+      "5:15245",
+      "BUTTON clickable · Duyệt audio",
+      "5:11467"
+    ],
+    [
+      "5:15247",
+      "5:15289",
+      "BACK button ←",
+      "5:11467"
+    ],
+    [
+      "5:15247",
+      "5:15322",
+      "BUTTON clickable · Lưu bài nghe",
+      "5:11467"
+    ],
+    [
+      "5:15324",
+      "5:15366",
+      "BACK button ←",
+      "5:11467"
+    ],
+    [
+      "5:15324",
+      "5:15396",
+      "BUTTON clickable · Lưu đề viết",
+      "5:11467"
+    ],
+    [
+      "5:15398",
+      "5:15440",
+      "BACK button ←",
+      "5:11467"
+    ],
+    [
+      "5:15398",
+      "5:15461",
+      "BUTTON clickable · Kiểm tra xuất bản",
+      "5:15463"
+    ],
+    [
+      "5:15463",
+      "5:15505",
+      "BACK button ←",
+      "5:11467"
+    ],
+    [
+      "5:15463",
+      "5:15532",
+      "BUTTON clickable · Xác nhận xuất bản",
+      "5:15599"
+    ],
+    [
+      "5:15534",
+      "5:15576",
+      "BACK button ←",
+      "5:15463"
+    ],
+    [
+      "5:15534",
+      "5:15597",
+      "BUTTON clickable · Sửa lesson",
+      "5:11467"
+    ],
+    [
+      "5:15599",
+      "5:15641",
+      "BACK button ←",
+      "5:14958"
+    ],
+    [
+      "5:15599",
+      "5:15662",
+      "BUTTON clickable · Quay lại danh sách",
+      "5:14958"
+    ],
+    [
+      "5:15599",
+      "5:15664",
+      "BUTTON clickable · Ẩn lesson",
+      "5:15666"
+    ],
+    [
+      "5:15666",
+      "5:15708",
+      "BACK button ←",
+      "5:15599"
+    ],
+    [
+      "5:15666",
+      "5:15726",
+      "BUTTON clickable · Hủy",
+      "5:15599"
+    ],
+    [
+      "5:15666",
+      "5:15728",
+      "BUTTON clickable · Xác nhận ẩn",
+      "5:14958"
+    ],
+    [
+      "5:15730",
+      "5:15772",
+      "BACK button ←",
+      "5:15599"
+    ],
+    [
+      "5:15730",
+      "5:15796",
+      "BUTTON clickable · Xác nhận thu hồi",
+      "5:14958"
+    ],
+    [
+      "5:15798",
+      "5:15840",
+      "BACK button ←",
+      "5:14886"
+    ],
+    [
+      "5:15798",
+      "5:15867",
+      "BUTTON clickable · Xem báo cáo tên",
+      "5:15869"
+    ],
+    [
+      "5:15869",
+      "5:15911",
+      "BACK button ←",
+      "5:15798"
+    ],
+    [
+      "5:15869",
+      "5:15932",
+      "BUTTON clickable · Xác nhận xử lý",
+      "5:15798"
+    ],
+    [
+      "17:3",
+      "17:45",
+      "BACK button ←",
+      "5:11702"
+    ],
+    [
+      "17:3",
+      "17:68",
+      "BUTTON clickable · Đặt lại mật khẩu",
+      "17:70"
+    ],
+    [
+      "17:70",
+      "17:112",
+      "BACK button ←",
+      "5:8246"
+    ],
+    [
+      "17:70",
+      "17:130",
+      "BUTTON clickable · Đăng nhập lại",
+      "5:8246"
+    ],
+    [
+      "19:2",
+      "19:44",
+      "BACK button ←",
+      "5:11326"
+    ],
+    [
+      "19:2",
+      "19:71",
+      "BUTTON clickable · Đổi mật khẩu",
+      "19:73"
+    ],
+    [
+      "19:73",
+      "19:115",
+      "BACK button ←",
+      "5:8246"
+    ],
+    [
+      "19:73",
+      "19:133",
+      "BUTTON clickable · Đăng nhập lại",
+      "5:8246"
+    ],
+    [
+      "19:137",
+      "19:179",
+      "BACK button ←",
+      "5:11326"
+    ],
+    [
+      "20:2",
+      "20:44",
+      "BACK button ←",
+      "19:137"
+    ],
+    [
+      "20:2",
+      "20:62",
+      "BUTTON clickable · Hủy",
+      "19:137"
+    ],
+    [
+      "20:2",
+      "20:64",
+      "BUTTON clickable · Xác nhận",
+      "5:11767"
+    ]
+  ],
+  "prototypeLinks": [
+    [
+      "5:8246",
+      "5:8323",
+      "ACTION · ĐĂNG NHẬP",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:8246",
+      "5:8326",
+      "ACTION · Tạo tài khoản",
+      "5:8332",
+      "NAVIGATE"
+    ],
+    [
+      "5:8246",
+      "5:8328",
+      "ACTION · Quên mật khẩu?",
+      "5:8396",
+      "NAVIGATE"
+    ],
+    [
+      "5:8332",
+      "5:8374",
+      "BACK button ←",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:8332",
+      "5:8394",
+      "BUTTON clickable · Tạo tài khoản",
+      "5:8460",
+      "NAVIGATE"
+    ],
+    [
+      "5:8396",
+      "5:8438",
+      "BACK button ←",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:8396",
+      "5:8458",
+      "BUTTON clickable · Gửi mã",
+      "5:11702",
+      "NAVIGATE"
+    ],
+    [
+      "5:8460",
+      "5:8502",
+      "BACK button ←",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:8460",
+      "5:8532",
+      "BUTTON clickable · Tiếp tục",
+      "5:8534",
+      "NAVIGATE"
+    ],
+    [
+      "5:8534",
+      "5:8576",
+      "BACK button ←",
+      "5:8460",
+      "NAVIGATE"
+    ],
+    [
+      "5:8534",
+      "5:8603",
+      "BUTTON clickable · Tiếp tục",
+      "5:8605",
+      "NAVIGATE"
+    ],
+    [
+      "5:8605",
+      "5:8647",
+      "BACK button ←",
+      "5:8534",
+      "NAVIGATE"
+    ],
+    [
+      "5:8605",
+      "5:8668",
+      "BUTTON clickable · Hoàn tất",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:8605",
+      "5:8670",
+      "BUTTON clickable · Bỏ qua",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8730",
+      "EDITABLE · CARD · Mốc ôn hôm nay",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8737",
+      "JOURNEY path · Personal Finance & Budgeting — Part 1",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8748",
+      "JOURNEY path · Personal Finance & Budgeting — Part 2",
+      "5:8864",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8759",
+      "BUTTON clickable · Khám phá tất cả chủ đề",
+      "5:8772",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8764",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8766",
+      "NAV Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8768",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:8672",
+      "5:8770",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8814",
+      "BACK button ←",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8831",
+      "EDITABLE · FIELD · Tìm chủ đề hoặc lesson",
+      "5:12023",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8841",
+      "EDITABLE · CARD · Personal Finance",
+      "5:8864",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8845",
+      "EDITABLE · CARD · Technology",
+      "5:8864",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8849",
+      "EDITABLE · CARD · Environment",
+      "5:8864",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8856",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8858",
+      "NAV Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8860",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:8772",
+      "5:8862",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:8864",
+      "5:8906",
+      "BACK button ←",
+      "5:8772",
+      "NAVIGATE"
+    ],
+    [
+      "5:8864",
+      "5:8926",
+      "EDITABLE · CARD · Part 1 · Budgeting",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:8864",
+      "5:8931",
+      "EDITABLE · CARD · Part 2 · Credit & Savings",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:8864",
+      "5:8939",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:8864",
+      "5:8941",
+      "NAV Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:8864",
+      "5:8943",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:8864",
+      "5:8945",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:8947",
+      "5:8989",
+      "BACK button ←",
+      "5:8864",
+      "NAVIGATE"
+    ],
+    [
+      "5:8947",
+      "5:9017",
+      "BUTTON clickable · Bắt đầu bài học",
+      "5:9030",
+      "NAVIGATE"
+    ],
+    [
+      "5:8947",
+      "5:9022",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:8947",
+      "5:9024",
+      "NAV Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:8947",
+      "5:9026",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:8947",
+      "5:9028",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:9030",
+      "5:9072",
+      "BACK button ←",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:9030",
+      "5:9111",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9115",
+      "NAVIGATE"
+    ],
+    [
+      "5:9030",
+      "5:9113",
+      "BUTTON clickable · Xem toàn bộ ngữ cảnh",
+      "5:12288",
+      "NAVIGATE"
+    ],
+    [
+      "5:9115",
+      "5:9157",
+      "BACK button ←",
+      "5:9030",
+      "NAVIGATE"
+    ],
+    [
+      "5:9115",
+      "5:9193",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9195",
+      "NAVIGATE"
+    ],
+    [
+      "5:9195",
+      "5:9237",
+      "BACK button ←",
+      "5:9115",
+      "NAVIGATE"
+    ],
+    [
+      "5:9195",
+      "5:9273",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9275",
+      "NAVIGATE"
+    ],
+    [
+      "5:9275",
+      "5:9317",
+      "BACK button ←",
+      "5:9195",
+      "NAVIGATE"
+    ],
+    [
+      "5:9275",
+      "5:9353",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9355",
+      "NAVIGATE"
+    ],
+    [
+      "5:9355",
+      "5:9397",
+      "BACK button ←",
+      "5:9275",
+      "NAVIGATE"
+    ],
+    [
+      "5:9355",
+      "5:9433",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9435",
+      "NAVIGATE"
+    ],
+    [
+      "5:9435",
+      "5:9477",
+      "BACK button ←",
+      "5:9355",
+      "NAVIGATE"
+    ],
+    [
+      "5:9435",
+      "5:9513",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9515",
+      "NAVIGATE"
+    ],
+    [
+      "5:9515",
+      "5:9557",
+      "BACK button ←",
+      "5:9435",
+      "NAVIGATE"
+    ],
+    [
+      "5:9515",
+      "5:9593",
+      "BUTTON clickable · Đã xem · Tiếp tục",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:9595",
+      "5:9637",
+      "BACK button ←",
+      "5:9515",
+      "NAVIGATE"
+    ],
+    [
+      "5:9595",
+      "5:9676",
+      "BUTTON clickable · Nộp bài nghe",
+      "5:9678",
+      "NAVIGATE"
+    ],
+    [
+      "5:9678",
+      "5:9720",
+      "BACK button ←",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:9678",
+      "5:9747",
+      "BUTTON clickable · Tiếp tục đến phần viết",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:9678",
+      "5:9749",
+      "BUTTON clickable · Xem transcript",
+      "5:12687",
+      "NAVIGATE"
+    ],
+    [
+      "5:9678",
+      "5:9751",
+      "BUTTON clickable · Nghe luyện thêm",
+      "5:12755",
+      "NAVIGATE"
+    ],
+    [
+      "5:9753",
+      "5:9795",
+      "BACK button ←",
+      "5:9678",
+      "NAVIGATE"
+    ],
+    [
+      "5:9753",
+      "5:9839",
+      "BUTTON clickable · Nộp bài viết",
+      "5:9841",
+      "NAVIGATE"
+    ],
+    [
+      "5:9841",
+      "5:9883",
+      "BACK button ←",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:9841",
+      "5:9924",
+      "BUTTON clickable · Về trang học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:9926",
+      "5:9968",
+      "BACK button ←",
+      "5:9841",
+      "NAVIGATE"
+    ],
+    [
+      "5:9926",
+      "5:9998",
+      "BUTTON clickable · Sửa câu một lần",
+      "5:10004",
+      "NAVIGATE"
+    ],
+    [
+      "5:9926",
+      "5:10000",
+      "BUTTON clickable · Xem lịch sử học",
+      "5:10718",
+      "NAVIGATE"
+    ],
+    [
+      "5:9926",
+      "5:10002",
+      "BUTTON clickable · Chi tiết nhận xét",
+      "5:13291",
+      "NAVIGATE"
+    ],
+    [
+      "5:10004",
+      "5:10046",
+      "BACK button ←",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:10004",
+      "5:10070",
+      "BUTTON clickable · Gửi bản sửa",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:10072",
+      "5:10132",
+      "EDITABLE · CARD · Finance — Part 1",
+      "5:10159",
+      "NAVIGATE"
+    ],
+    [
+      "5:10072",
+      "5:10141",
+      "EDITABLE · CARD · Ôn tự do",
+      "5:13752",
+      "NAVIGATE"
+    ],
+    [
+      "5:10072",
+      "5:10146",
+      "BUTTON clickable · Bật nhắc ôn",
+      "5:13944",
+      "NAVIGATE"
+    ],
+    [
+      "5:10072",
+      "5:10149",
+      "NAV Học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:10072",
+      "5:10153",
+      "NAV Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:10072",
+      "5:10155",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:10072",
+      "5:10157",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:10159",
+      "5:10201",
+      "BACK button ←",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:10159",
+      "5:10226",
+      "BUTTON clickable · Bắt đầu ôn",
+      "5:10228",
+      "NAVIGATE"
+    ],
+    [
+      "5:10228",
+      "5:10270",
+      "BACK button ←",
+      "5:10159",
+      "NAVIGATE"
+    ],
+    [
+      "5:10228",
+      "5:10297",
+      "BUTTON clickable · Tiếp tục nghe",
+      "5:10299",
+      "NAVIGATE"
+    ],
+    [
+      "5:10299",
+      "5:10341",
+      "BACK button ←",
+      "5:10228",
+      "NAVIGATE"
+    ],
+    [
+      "5:10299",
+      "5:10365",
+      "BUTTON clickable · Tiếp tục viết",
+      "5:10367",
+      "NAVIGATE"
+    ],
+    [
+      "5:10367",
+      "5:10409",
+      "BACK button ←",
+      "5:10299",
+      "NAVIGATE"
+    ],
+    [
+      "5:10367",
+      "5:10433",
+      "BUTTON clickable · Nộp bài ôn",
+      "5:10435",
+      "NAVIGATE"
+    ],
+    [
+      "5:10435",
+      "5:10477",
+      "BACK button ←",
+      "5:10367",
+      "NAVIGATE"
+    ],
+    [
+      "5:10435",
+      "5:10501",
+      "BUTTON clickable · Về ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:10435",
+      "5:10503",
+      "BUTTON clickable · Đáp án sau khi nộp",
+      "5:13817",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10566",
+      "EDITABLE · STREAK · 3 ngày học liên tục",
+      "5:14074",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10570",
+      "EDITABLE · ACTIVITY HEATMAP · Biểu đồ hoạt động",
+      "5:14140",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10616",
+      "EDITABLE · CARD · Lịch sử bài học",
+      "5:10718",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10620",
+      "BUTTON clickable · Chi tiết hoạt động",
+      "5:10637",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10622",
+      "BUTTON clickable · Kết quả nghe đầu",
+      "5:14009",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10624",
+      "BUTTON clickable · Sổ điểm",
+      "5:14307",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10627",
+      "NAV Học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10629",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10633",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:10505",
+      "5:10635",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:10637",
+      "5:10679",
+      "BACK button ←",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:10637",
+      "5:10705",
+      "BUTTON clickable · Quay lại tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:10637",
+      "5:10708",
+      "NAV Học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:10637",
+      "5:10710",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:10637",
+      "5:10714",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:10637",
+      "5:10716",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:10718",
+      "5:10760",
+      "BACK button ←",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:10718",
+      "5:10777",
+      "EDITABLE · CARD · Personal Finance – Part 1",
+      "5:10798",
+      "NAVIGATE"
+    ],
+    [
+      "5:10718",
+      "5:10782",
+      "EDITABLE · CARD · Personal Finance – Part 2",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:10718",
+      "5:10788",
+      "NAV Học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:10718",
+      "5:10790",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:10718",
+      "5:10794",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:10718",
+      "5:10796",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:10798",
+      "5:10840",
+      "BACK button ←",
+      "5:10718",
+      "NAVIGATE"
+    ],
+    [
+      "5:10798",
+      "5:10870",
+      "BUTTON clickable · Xem phản hồi viết",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:10872",
+      "5:10950",
+      "NAV Học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:10872",
+      "5:10952",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:10872",
+      "5:10954",
+      "NAV Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:10872",
+      "5:10958",
+      "NAV Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:10960",
+      "5:11002",
+      "BACK button ←",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:10960",
+      "5:11023",
+      "BUTTON clickable · Gửi báo cáo",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11085",
+      "EDITABLE · CARD · Chọn band và chủ đề",
+      "5:11183",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11089",
+      "EDITABLE · CARD · Lịch sử học",
+      "5:10718",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11095",
+      "EDITABLE · CARD · Nhắc ôn tập",
+      "5:11255",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11099",
+      "EDITABLE · CARD · Thông tin tài khoản",
+      "5:11326",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11103",
+      "BUTTON clickable · Sửa tên hiển thị",
+      "5:11118",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11105",
+      "BUTTON clickable · Đăng xuất",
+      "5:14822",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11108",
+      "NAV Học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11110",
+      "NAV Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11112",
+      "NAV Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:11025",
+      "5:11114",
+      "NAV Xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:11118",
+      "5:11160",
+      "BACK button ←",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11118",
+      "5:11181",
+      "BUTTON clickable · Lưu thay đổi",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11183",
+      "5:11225",
+      "BACK button ←",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11183",
+      "5:11253",
+      "BUTTON clickable · Lưu lựa chọn",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11255",
+      "5:11297",
+      "BACK button ←",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11255",
+      "5:11324",
+      "BUTTON clickable · Lưu",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11326",
+      "5:11368",
+      "BACK button ←",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11326",
+      "5:11389",
+      "EDITABLE · CARD · Đổi mật khẩu",
+      "19:2",
+      "NAVIGATE"
+    ],
+    [
+      "5:11326",
+      "5:11392",
+      "EDITABLE · CARD · Quản lý phiên",
+      "19:137",
+      "NAVIGATE"
+    ],
+    [
+      "5:11395",
+      "5:11437",
+      "BACK button ←",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:11395",
+      "5:11461",
+      "BUTTON clickable · Soạn lesson",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:11395",
+      "5:11463",
+      "BUTTON clickable · Tạo / sửa chủ đề",
+      "5:15028",
+      "NAVIGATE"
+    ],
+    [
+      "5:11395",
+      "5:11465",
+      "BUTTON clickable · Quản lý lesson",
+      "5:14958",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11509",
+      "BACK button ←",
+      "5:11395",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11547",
+      "BUTTON clickable · Xem trước learner",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11549",
+      "BUTTON clickable · Soạn từ vựng",
+      "5:15096",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11551",
+      "BUTTON clickable · Tạo / duyệt TTS",
+      "5:15176",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11553",
+      "BUTTON clickable · Soạn bài nghe",
+      "5:15247",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11555",
+      "BUTTON clickable · Soạn bài viết",
+      "5:15324",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11557",
+      "BUTTON clickable · Xem trước",
+      "5:15398",
+      "NAVIGATE"
+    ],
+    [
+      "5:11467",
+      "5:11559",
+      "BUTTON clickable · Kiểm tra xuất bản",
+      "5:15463",
+      "NAVIGATE"
+    ],
+    [
+      "5:11561",
+      "5:11603",
+      "BACK button ←",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:11561",
+      "5:11630",
+      "BUTTON clickable · Thử lại",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:11561",
+      "5:11632",
+      "BUTTON clickable · Quên mật khẩu",
+      "5:8396",
+      "NAVIGATE"
+    ],
+    [
+      "5:11634",
+      "5:11676",
+      "BACK button ←",
+      "5:8332",
+      "NAVIGATE"
+    ],
+    [
+      "5:11634",
+      "5:11700",
+      "BUTTON clickable · Sửa thông tin",
+      "5:8332",
+      "NAVIGATE"
+    ],
+    [
+      "5:11702",
+      "5:11744",
+      "BACK button ←",
+      "5:8396",
+      "NAVIGATE"
+    ],
+    [
+      "5:11702",
+      "5:11765",
+      "BUTTON clickable · Xác minh mã",
+      "17:3",
+      "NAVIGATE"
+    ],
+    [
+      "5:11767",
+      "5:11809",
+      "BACK button ←",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:11767",
+      "5:11827",
+      "BUTTON clickable · Đăng nhập",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:11829",
+      "5:11871",
+      "BACK button ←",
+      "5:8534",
+      "NAVIGATE"
+    ],
+    [
+      "5:11829",
+      "5:11892",
+      "BUTTON clickable · Chọn chủ đề",
+      "5:8534",
+      "NAVIGATE"
+    ],
+    [
+      "5:11894",
+      "5:11936",
+      "BACK button ←",
+      "5:8605",
+      "NAVIGATE"
+    ],
+    [
+      "5:11894",
+      "5:11957",
+      "BUTTON clickable · Sửa tên",
+      "5:8605",
+      "NAVIGATE"
+    ],
+    [
+      "5:11894",
+      "5:11959",
+      "BUTTON clickable · Bỏ qua",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:11961",
+      "5:12003",
+      "BACK button ←",
+      "5:8772",
+      "NAVIGATE"
+    ],
+    [
+      "5:11961",
+      "5:12021",
+      "BUTTON clickable · Đổi bộ lọc",
+      "5:8772",
+      "NAVIGATE"
+    ],
+    [
+      "5:12023",
+      "5:12065",
+      "BACK button ←",
+      "5:8772",
+      "NAVIGATE"
+    ],
+    [
+      "5:12023",
+      "5:12089",
+      "BUTTON clickable · Xem tất cả",
+      "5:8772",
+      "NAVIGATE"
+    ],
+    [
+      "5:12091",
+      "5:12133",
+      "BACK button ←",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:12091",
+      "5:12154",
+      "BUTTON clickable · Trở lại bài học",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:12156",
+      "5:12198",
+      "BACK button ←",
+      "5:8947",
+      "NAVIGATE"
+    ],
+    [
+      "5:12156",
+      "5:12219",
+      "BUTTON clickable · Tiếp tục học từ",
+      "5:9030",
+      "NAVIGATE"
+    ],
+    [
+      "5:12156",
+      "5:12221",
+      "BUTTON clickable · Trở lại chủ đề",
+      "5:8864",
+      "NAVIGATE"
+    ],
+    [
+      "5:12223",
+      "5:12265",
+      "BACK button ←",
+      "5:9030",
+      "NAVIGATE"
+    ],
+    [
+      "5:12223",
+      "5:12286",
+      "BUTTON clickable · Thử phát lại",
+      "5:9030",
+      "NAVIGATE"
+    ],
+    [
+      "5:12288",
+      "5:12330",
+      "BACK button ←",
+      "5:9030",
+      "NAVIGATE"
+    ],
+    [
+      "5:12288",
+      "5:12360",
+      "BUTTON clickable · Tiếp tục",
+      "5:9115",
+      "NAVIGATE"
+    ],
+    [
+      "5:12362",
+      "5:12404",
+      "BACK button ←",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12362",
+      "5:12425",
+      "BUTTON clickable · Quay về luyện nghe",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12427",
+      "5:12469",
+      "BACK button ←",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12427",
+      "5:12490",
+      "BUTTON clickable · Tải lại audio",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12492",
+      "5:12534",
+      "BACK button ←",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12492",
+      "5:12555",
+      "BUTTON clickable · Tiếp tục nghe",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12557",
+      "5:12599",
+      "BACK button ←",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12557",
+      "5:12620",
+      "BUTTON clickable · Quay lại bài nghe",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12622",
+      "5:12664",
+      "BACK button ←",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12622",
+      "5:12685",
+      "BUTTON clickable · Xem kết quả khi hoàn tất",
+      "5:9678",
+      "NAVIGATE"
+    ],
+    [
+      "5:12687",
+      "5:12729",
+      "BACK button ←",
+      "5:9678",
+      "NAVIGATE"
+    ],
+    [
+      "5:12687",
+      "5:12753",
+      "BUTTON clickable · Viết câu vận dụng",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:12755",
+      "5:12797",
+      "BACK button ←",
+      "5:9678",
+      "NAVIGATE"
+    ],
+    [
+      "5:12755",
+      "5:12821",
+      "BUTTON clickable · Bắt đầu luyện thêm",
+      "5:9595",
+      "NAVIGATE"
+    ],
+    [
+      "5:12823",
+      "5:12865",
+      "BACK button ←",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:12823",
+      "5:12889",
+      "BUTTON clickable · Sửa câu",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:12823",
+      "5:12891",
+      "BUTTON clickable · Vẫn nộp hợp lệ",
+      "5:9841",
+      "NAVIGATE"
+    ],
+    [
+      "5:12893",
+      "5:12935",
+      "BACK button ←",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:12893",
+      "5:12959",
+      "BUTTON clickable · Sửa từng câu",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:12961",
+      "5:13003",
+      "BACK button ←",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:12961",
+      "5:13024",
+      "BUTTON clickable · Sửa câu",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:12961",
+      "5:13026",
+      "BUTTON clickable · Vẫn nộp",
+      "5:9841",
+      "NAVIGATE"
+    ],
+    [
+      "5:13028",
+      "5:13070",
+      "BACK button ←",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:13028",
+      "5:13091",
+      "BUTTON clickable · Thử gửi lại",
+      "5:9753",
+      "NAVIGATE"
+    ],
+    [
+      "5:13093",
+      "5:13135",
+      "BACK button ←",
+      "5:9841",
+      "NAVIGATE"
+    ],
+    [
+      "5:13093",
+      "5:13156",
+      "BUTTON clickable · Xem trạng thái nhận xét",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:13158",
+      "5:13200",
+      "BACK button ←",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:13158",
+      "5:13224",
+      "BUTTON clickable · Quay về bài học",
+      "5:9841",
+      "NAVIGATE"
+    ],
+    [
+      "5:13226",
+      "5:13268",
+      "BACK button ←",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:13226",
+      "5:13289",
+      "BUTTON clickable · Thử nhận xét lại",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:13291",
+      "5:13333",
+      "BACK button ←",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:13291",
+      "5:13360",
+      "BUTTON clickable · Sửa câu một lần",
+      "5:10004",
+      "NAVIGATE"
+    ],
+    [
+      "5:13362",
+      "5:13404",
+      "BACK button ←",
+      "5:10004",
+      "NAVIGATE"
+    ],
+    [
+      "5:13362",
+      "5:13425",
+      "BUTTON clickable · Xem nhận xét mới",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:13427",
+      "5:13469",
+      "BACK button ←",
+      "5:10004",
+      "NAVIGATE"
+    ],
+    [
+      "5:13427",
+      "5:13487",
+      "BUTTON clickable · Xem lịch sử nhận xét",
+      "5:9926",
+      "NAVIGATE"
+    ],
+    [
+      "5:13489",
+      "5:13531",
+      "BACK button ←",
+      "5:9841",
+      "NAVIGATE"
+    ],
+    [
+      "5:13489",
+      "5:13555",
+      "BUTTON clickable · Xem tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:13557",
+      "5:13599",
+      "BACK button ←",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:13557",
+      "5:13620",
+      "BUTTON clickable · Ôn ngay",
+      "5:10159",
+      "NAVIGATE"
+    ],
+    [
+      "5:13622",
+      "5:13664",
+      "BACK button ←",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:13622",
+      "5:13685",
+      "BUTTON clickable · Xem lịch ôn",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:13687",
+      "5:13729",
+      "BACK button ←",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:13687",
+      "5:13750",
+      "BUTTON clickable · Ôn ngoài mốc",
+      "5:10159",
+      "NAVIGATE"
+    ],
+    [
+      "5:13752",
+      "5:13794",
+      "BACK button ←",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:13752",
+      "5:13815",
+      "BUTTON clickable · Bắt đầu ôn",
+      "5:10228",
+      "NAVIGATE"
+    ],
+    [
+      "5:13817",
+      "5:13859",
+      "BACK button ←",
+      "5:10435",
+      "NAVIGATE"
+    ],
+    [
+      "5:13817",
+      "5:13880",
+      "BUTTON clickable · Xem kết quả ôn",
+      "5:10435",
+      "NAVIGATE"
+    ],
+    [
+      "5:13882",
+      "5:13924",
+      "BACK button ←",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:13882",
+      "5:13942",
+      "BUTTON clickable · Quay về Ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:13944",
+      "5:13986",
+      "BACK button ←",
+      "5:11255",
+      "NAVIGATE"
+    ],
+    [
+      "5:13944",
+      "5:14007",
+      "BUTTON clickable · Thiết lập nhắc ôn",
+      "5:11255",
+      "NAVIGATE"
+    ],
+    [
+      "5:14009",
+      "5:14051",
+      "BACK button ←",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:14009",
+      "5:14072",
+      "BUTTON clickable · Xem lịch sử",
+      "5:10718",
+      "NAVIGATE"
+    ],
+    [
+      "5:14074",
+      "5:14116",
+      "BACK button ←",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:14074",
+      "5:14138",
+      "BUTTON clickable · Tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:14140",
+      "5:14182",
+      "BACK button ←",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:14140",
+      "5:14243",
+      "BUTTON clickable · Quay về tiến độ",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:14245",
+      "5:14287",
+      "BACK button ←",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:14245",
+      "5:14305",
+      "BUTTON clickable · Bắt đầu học",
+      "5:8672",
+      "NAVIGATE"
+    ],
+    [
+      "5:14307",
+      "5:14349",
+      "BACK button ←",
+      "5:10505",
+      "NAVIGATE"
+    ],
+    [
+      "5:14307",
+      "5:14373",
+      "BUTTON clickable · Xem thứ hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14375",
+      "5:14417",
+      "BACK button ←",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14375",
+      "5:14440",
+      "BUTTON clickable · Bảng tuần",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14442",
+      "5:14484",
+      "BACK button ←",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14442",
+      "5:14507",
+      "BUTTON clickable · Bảng tuần",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14509",
+      "5:14551",
+      "BACK button ←",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14509",
+      "5:14569",
+      "BUTTON clickable · Trở lại bảng xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14571",
+      "5:14613",
+      "BACK button ←",
+      "5:10960",
+      "NAVIGATE"
+    ],
+    [
+      "5:14571",
+      "5:14631",
+      "BUTTON clickable · Quay về xếp hạng",
+      "5:10872",
+      "NAVIGATE"
+    ],
+    [
+      "5:14633",
+      "5:14675",
+      "BACK button ←",
+      "5:11118",
+      "NAVIGATE"
+    ],
+    [
+      "5:14633",
+      "5:14696",
+      "BUTTON clickable · Hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:14698",
+      "5:14740",
+      "BACK button ←",
+      "5:11183",
+      "NAVIGATE"
+    ],
+    [
+      "5:14698",
+      "5:14758",
+      "BUTTON clickable · Về hồ sơ",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:14760",
+      "5:14802",
+      "BACK button ←",
+      "5:11255",
+      "NAVIGATE"
+    ],
+    [
+      "5:14760",
+      "5:14820",
+      "BUTTON clickable · Về ôn tập",
+      "5:10072",
+      "NAVIGATE"
+    ],
+    [
+      "5:14822",
+      "5:14864",
+      "BACK button ←",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:14822",
+      "5:14882",
+      "BUTTON clickable · Hủy",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:14822",
+      "5:14884",
+      "BUTTON clickable · Đăng xuất",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "5:14886",
+      "5:14928",
+      "BACK button ←",
+      "5:11025",
+      "NAVIGATE"
+    ],
+    [
+      "5:14886",
+      "5:14946",
+      "EDITABLE · CARD · Chủ đề",
+      "5:11395",
+      "NAVIGATE"
+    ],
+    [
+      "5:14886",
+      "5:14950",
+      "EDITABLE · CARD · Lesson",
+      "5:14958",
+      "NAVIGATE"
+    ],
+    [
+      "5:14886",
+      "5:14954",
+      "EDITABLE · CARD · Báo cáo & kiểm duyệt",
+      "5:15798",
+      "NAVIGATE"
+    ],
+    [
+      "5:14958",
+      "5:15000",
+      "BACK button ←",
+      "5:14886",
+      "NAVIGATE"
+    ],
+    [
+      "5:14958",
+      "5:15018",
+      "EDITABLE · CARD · Finance — Part 1",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:14958",
+      "5:15022",
+      "EDITABLE · CARD · Finance — Part 2",
+      "5:15599",
+      "NAVIGATE"
+    ],
+    [
+      "5:14958",
+      "5:15026",
+      "BUTTON clickable · Tạo lesson",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15028",
+      "5:15070",
+      "BACK button ←",
+      "5:11395",
+      "NAVIGATE"
+    ],
+    [
+      "5:15028",
+      "5:15094",
+      "BUTTON clickable · Lưu chủ đề",
+      "5:11395",
+      "NAVIGATE"
+    ],
+    [
+      "5:15096",
+      "5:15138",
+      "BACK button ←",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15096",
+      "5:15174",
+      "BUTTON clickable · Lưu từ vựng",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15176",
+      "5:15218",
+      "BACK button ←",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15176",
+      "5:15245",
+      "BUTTON clickable · Duyệt audio",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15247",
+      "5:15289",
+      "BACK button ←",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15247",
+      "5:15322",
+      "BUTTON clickable · Lưu bài nghe",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15324",
+      "5:15366",
+      "BACK button ←",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15324",
+      "5:15396",
+      "BUTTON clickable · Lưu đề viết",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15398",
+      "5:15440",
+      "BACK button ←",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15398",
+      "5:15461",
+      "BUTTON clickable · Kiểm tra xuất bản",
+      "5:15463",
+      "NAVIGATE"
+    ],
+    [
+      "5:15463",
+      "5:15505",
+      "BACK button ←",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15463",
+      "5:15532",
+      "BUTTON clickable · Xác nhận xuất bản",
+      "5:15599",
+      "NAVIGATE"
+    ],
+    [
+      "5:15534",
+      "5:15576",
+      "BACK button ←",
+      "5:15463",
+      "NAVIGATE"
+    ],
+    [
+      "5:15534",
+      "5:15597",
+      "BUTTON clickable · Sửa lesson",
+      "5:11467",
+      "NAVIGATE"
+    ],
+    [
+      "5:15599",
+      "5:15641",
+      "BACK button ←",
+      "5:14958",
+      "NAVIGATE"
+    ],
+    [
+      "5:15599",
+      "5:15662",
+      "BUTTON clickable · Quay lại danh sách",
+      "5:14958",
+      "NAVIGATE"
+    ],
+    [
+      "5:15599",
+      "5:15664",
+      "BUTTON clickable · Ẩn lesson",
+      "5:15666",
+      "NAVIGATE"
+    ],
+    [
+      "5:15666",
+      "5:15708",
+      "BACK button ←",
+      "5:15599",
+      "NAVIGATE"
+    ],
+    [
+      "5:15666",
+      "5:15726",
+      "BUTTON clickable · Hủy",
+      "5:15599",
+      "NAVIGATE"
+    ],
+    [
+      "5:15666",
+      "5:15728",
+      "BUTTON clickable · Xác nhận ẩn",
+      "5:14958",
+      "NAVIGATE"
+    ],
+    [
+      "5:15730",
+      "5:15772",
+      "BACK button ←",
+      "5:15599",
+      "NAVIGATE"
+    ],
+    [
+      "5:15730",
+      "5:15796",
+      "BUTTON clickable · Xác nhận thu hồi",
+      "5:14958",
+      "NAVIGATE"
+    ],
+    [
+      "5:15798",
+      "5:15840",
+      "BACK button ←",
+      "5:14886",
+      "NAVIGATE"
+    ],
+    [
+      "5:15798",
+      "5:15867",
+      "BUTTON clickable · Xem báo cáo tên",
+      "5:15869",
+      "NAVIGATE"
+    ],
+    [
+      "5:15869",
+      "5:15911",
+      "BACK button ←",
+      "5:15798",
+      "NAVIGATE"
+    ],
+    [
+      "5:15869",
+      "5:15932",
+      "BUTTON clickable · Xác nhận xử lý",
+      "5:15798",
+      "NAVIGATE"
+    ],
+    [
+      "17:3",
+      "17:45",
+      "BACK button ←",
+      "5:11702",
+      "NAVIGATE"
+    ],
+    [
+      "17:3",
+      "17:68",
+      "BUTTON clickable · Đặt lại mật khẩu",
+      "17:70",
+      "NAVIGATE"
+    ],
+    [
+      "17:70",
+      "17:112",
+      "BACK button ←",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "17:70",
+      "17:130",
+      "BUTTON clickable · Đăng nhập lại",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "19:2",
+      "19:44",
+      "BACK button ←",
+      "5:11326",
+      "NAVIGATE"
+    ],
+    [
+      "19:2",
+      "19:71",
+      "BUTTON clickable · Đổi mật khẩu",
+      "19:73",
+      "NAVIGATE"
+    ],
+    [
+      "19:73",
+      "19:115",
+      "BACK button ←",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "19:73",
+      "19:133",
+      "BUTTON clickable · Đăng nhập lại",
+      "5:8246",
+      "NAVIGATE"
+    ],
+    [
+      "19:137",
+      "19:179",
+      "BACK button ←",
+      "5:11326",
+      "NAVIGATE"
+    ],
+    [
+      "19:137",
+      "19:203",
+      "EDITABLE · CARD · Đăng xuất tất cả  ›",
+      "20:2",
+      "NAVIGATE"
+    ],
+    [
+      "20:2",
+      "20:44",
+      "BACK button ←",
+      "19:137",
+      "NAVIGATE"
+    ],
+    [
+      "20:2",
+      "20:62",
+      "BUTTON clickable · Hủy",
+      "19:137",
+      "NAVIGATE"
+    ],
+    [
+      "20:2",
+      "20:64",
+      "BUTTON clickable · Xác nhận",
+      "5:11767",
+      "NAVIGATE"
+    ]
+  ]
+}
