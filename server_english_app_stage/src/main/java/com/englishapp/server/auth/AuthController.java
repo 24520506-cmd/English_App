@@ -21,13 +21,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class AuthController {
     private final AuthService auth;
+    private final PhoneVerificationService phoneVerification;
+    private final EmailVerificationService emailVerification;
 
-    public AuthController(AuthService auth) { this.auth = auth; }
+    public AuthController(AuthService auth, PhoneVerificationService phoneVerification,
+            EmailVerificationService emailVerification) {
+        this.auth = auth;
+        this.phoneVerification = phoneVerification;
+        this.emailVerification = emailVerification;
+    }
 
     public record RegisterRequest(String username, String password, String email, String phone) { }
     public record LoginRequest(String username, String password, String device_label, String platform) { }
     public record RefreshRequest(String refresh_token) { }
     public record PasswordChangeRequest(String current_password, String new_password) { }
+    public record OtpVerifyRequest(String code) { }
 
     @PostMapping("/users")
     ResponseEntity<Map<String, Object>> register(@RequestBody RegisterRequest request) {
@@ -98,5 +106,45 @@ public class AuthController {
     ResponseEntity<Void> activity(@RequestHeader("Authorization") String header) {
         auth.activity(header.substring(7));
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/me/phone-verifications")
+    ResponseEntity<Map<String, Object>> startPhoneVerification(Authentication principal,
+            HttpServletRequest http) {
+        return ResponseEntity.accepted().body(phoneVerification.create(
+                UUID.fromString(principal.getName()), http.getRemoteAddr()));
+    }
+
+    @PostMapping("/me/phone-verifications/{challengeId}/resend")
+    ResponseEntity<Map<String, Object>> resendPhoneVerification(Authentication principal,
+            @PathVariable UUID challengeId, HttpServletRequest http) {
+        return ResponseEntity.accepted().body(phoneVerification.resend(
+                UUID.fromString(principal.getName()), challengeId, http.getRemoteAddr()));
+    }
+
+    @PostMapping("/me/phone-verifications/{challengeId}/verify")
+    Map<String, Object> verifyPhone(Authentication principal, @PathVariable UUID challengeId,
+            @RequestBody OtpVerifyRequest request) {
+        return phoneVerification.verify(UUID.fromString(principal.getName()), challengeId, request.code());
+    }
+
+    @PostMapping("/me/email-verifications")
+    ResponseEntity<Map<String, Object>> startEmailVerification(Authentication principal,
+            HttpServletRequest http) {
+        return ResponseEntity.accepted().body(emailVerification.create(
+                UUID.fromString(principal.getName()), http.getRemoteAddr()));
+    }
+
+    @PostMapping("/me/email-verifications/{challengeId}/resend")
+    ResponseEntity<Map<String, Object>> resendEmailVerification(Authentication principal,
+            @PathVariable UUID challengeId, HttpServletRequest http) {
+        return ResponseEntity.accepted().body(emailVerification.resend(
+                UUID.fromString(principal.getName()), challengeId, http.getRemoteAddr()));
+    }
+
+    @PostMapping("/me/email-verifications/{challengeId}/verify")
+    Map<String, Object> verifyEmail(Authentication principal, @PathVariable UUID challengeId,
+            @RequestBody OtpVerifyRequest request) {
+        return emailVerification.verify(UUID.fromString(principal.getName()), challengeId, request.code());
     }
 }
