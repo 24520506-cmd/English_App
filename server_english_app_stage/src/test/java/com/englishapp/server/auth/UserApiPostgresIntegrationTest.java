@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,12 @@ class UserApiPostgresIntegrationTest {
     @LocalServerPort int port;
     @Autowired JdbcTemplate db;
     private final HttpClient http = HttpClient.newHttpClient();
+
+    @BeforeEach void resetLoopbackLoginRateLimit() {
+        // All embedded-server test requests originate from 127.0.0.1. Keep the
+        // production IP throttle intact while isolating each integration test.
+        db.update("DELETE FROM login_ip_request WHERE ip_address = '127.0.0.1'");
+    }
 
     private HttpResponse<String> request(String method, String path, String token, String body) throws Exception {
         HttpRequest.Builder builder = HttpRequest.newBuilder(URI.create("http://localhost:" + port + "/api/v1" + path))
@@ -71,6 +78,93 @@ class UserApiPostgresIntegrationTest {
         assertEquals("VALIDATION_ERROR", JsonPath.read(forbiddenField.body(), "$.error.code"));
         String saved = db.queryForObject("SELECT display_name FROM app_user WHERE username = ?", String.class, username);
         assertEquals("Minh", saved);
+    }
+
+    @Test void profileDisplayNameIsReturnedBySubsequentRead() throws Exception {
+        String username = register();
+        String access = JsonPath.read(login(username, "profile-update").body(), "$.access_token");
+
+        HttpResponse<String> updated = request("PATCH", "/me", access, "{\"display_name\":\"Minh\"}");
+        assertEquals(200, updated.statusCode(), updated.body());
+        assertEquals("Minh", JsonPath.read(updated.body(), "$.profile.display_name"));
+        assertEquals("Minh", JsonPath.read(request("GET", "/me", access, null).body(),
+                "$.profile.display_name"));
+        HttpResponse<String> cleared = request("PATCH", "/me", access, "{\"display_name\":null}");
+        assertEquals(200, cleared.statusCode(), cleared.body());
+        assertNull(JsonPath.read(request("GET", "/me", access, null).body(), "$.profile.display_name"));
+    }
+
+    @Test void preferencesAreSavedReadBackAndIsolatedByBearerUser() throws Exception {
+        String userA = register();
+        String userB = register();
+        String accessA = JsonPath.read(login(userA, "preferences-A").body(), "$.access_token");
+        String accessB = JsonPath.read(login(userB, "preferences-B").body(), "$.access_token");
+        String bodyA = "{\"band\":\"BELOW_4_0\",\"topic_ids\":[\"daily_life\",\"finance\"]}";
+
+        HttpResponse<String> savedA = request("PUT", "/me/preferences", accessA, bodyA);
+        assertEquals(200, savedA.statusCode(), savedA.body());
+        assertEquals("BELOW_4_0", JsonPath.read(savedA.body(), "$.band"));
+        assertEquals(List.of("daily_life", "finance"), JsonPath.read(savedA.body(), "$.topic_ids"));
+        assertEquals("BELOW_4_0", JsonPath.read(request("GET", "/me/preferences", accessA, null).body(),
+                "$.band"));
+        assertEquals(List.of("daily_life", "finance"), JsonPath.read(
+                request("GET", "/me/preferences", accessA, null).body(), "$.topic_ids"));
+        HttpResponse<String> emptyB = request("GET", "/me/preferences", accessB, null);
+        assertEquals(200, emptyB.statusCode(), emptyB.body());
+        assertNull(JsonPath.read(emptyB.body(), "$.band"));
+        assertEquals(List.of(), JsonPath.read(emptyB.body(), "$.topic_ids"));
+        HttpResponse<String> savedB = request("PUT", "/me/preferences", accessB,
+                "{\"band\":\"7_0_PLUS\",\"topic_ids\":[\"health\"]}");
+        assertEquals(200, savedB.statusCode(), savedB.body());
+        assertEquals("BELOW_4_0", JsonPath.read(request("GET", "/me/preferences", accessA, null).body(),
+                "$.band"));
+        assertEquals(List.of("daily_life", "finance"), JsonPath.read(
+                request("GET", "/me/preferences", accessA, null).body(), "$.topic_ids"));
+        HttpResponse<String> replacedA = request("PUT", "/me/preferences", accessA,
+                "{\"band\":\"5_5_6_5\",\"topic_ids\":[\"travel\"]}");
+        assertEquals(200, replacedA.statusCode(), replacedA.body());
+        assertEquals("5_5_6_5", JsonPath.read(replacedA.body(), "$.band"));
+        assertEquals(List.of("travel"), JsonPath.read(replacedA.body(), "$.topic_ids"));
+    }
+
+    @Test void preferencesRejectInvalidBandAndTopicWithoutReplacingSavedChoices() throws Exception {
+        String username = register();
+        String access = JsonPath.read(login(username, "preferences-invalid").body(), "$.access_token");
+        assertEquals(200, request("PUT", "/me/preferences", access,
+                "{\"band\":\"4_0_5_0\",\"topic_ids\":[\"education\"]}").statusCode());
+
+        HttpResponse<String> invalidBand = request("PUT", "/me/preferences", access,
+                "{\"band\":\"4.5\",\"topic_ids\":[\"finance\"]}");
+        assertEquals(400, invalidBand.statusCode(), invalidBand.body());
+        assertEquals("VALIDATION_ERROR", JsonPath.read(invalidBand.body(), "$.error.code"));
+        HttpResponse<String> invalidTopic = request("PUT", "/me/preferences", access,
+                "{\"band\":\"5_5_6_5\",\"topic_ids\":[\"not_a_topic\"]}");
+        assertEquals(400, invalidTopic.statusCode(), invalidTopic.body());
+        assertEquals("VALIDATION_ERROR", JsonPath.read(invalidTopic.body(), "$.error.code"));
+
+        HttpResponse<String> unchanged = request("GET", "/me/preferences", access, null);
+        assertEquals("4_0_5_0", JsonPath.read(unchanged.body(), "$.band"));
+        assertEquals(List.of("education"), JsonPath.read(unchanged.body(), "$.topic_ids"));
+    }
+
+    @Test void preferencesRequireValidBearerToken() throws Exception {
+        for (String path : List.of("/me/preferences")) {
+            assertEquals(401, request("GET", path, null, null).statusCode());
+            assertEquals(401, request("PUT", path, null,
+                    "{\"band\":\"BELOW_4_0\",\"topic_ids\":[\"daily_life\"]}").statusCode());
+            assertEquals(401, request("GET", path, "not-a-valid-token", null).statusCode());
+            assertEquals(401, request("PUT", path, "not-a-valid-token",
+                    "{\"band\":\"BELOW_4_0\",\"topic_ids\":[\"daily_life\"]}").statusCode());
+        }
+    }
+
+    @Test void preferencesAreRestrictedToLearnerRole() throws Exception {
+        String username = register();
+        db.update("UPDATE app_user SET role = 'admin' WHERE username = ?", username);
+        String adminAccess = JsonPath.read(login(username, "admin-preferences").body(), "$.access_token");
+        assertEquals(403, request("GET", "/me/preferences", adminAccess, null).statusCode());
+        assertEquals(403, request("PUT", "/me/preferences", adminAccess,
+                "{\"band\":\"BELOW_4_0\",\"topic_ids\":[\"daily_life\"]}").statusCode());
     }
 
     @Test void sessionsAreOwnedAndRevocationPreventsRefresh() throws Exception {

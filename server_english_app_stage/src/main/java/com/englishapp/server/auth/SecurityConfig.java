@@ -20,13 +20,22 @@ public class SecurityConfig {
         return registration;
     }
 
-    @Bean SecurityFilterChain filterChain(HttpSecurity http, BearerAuthFilter bearer) throws Exception {
+    @Bean FilterRegistrationBean<ApiRequestLoggingFilter> apiRequestLoggingServletRegistration(
+            ApiRequestLoggingFilter requestLogger) {
+        FilterRegistrationBean<ApiRequestLoggingFilter> registration = new FilterRegistrationBean<>(requestLogger);
+        registration.setEnabled(false); // Spring Security owns this filter's position.
+        return registration;
+    }
+
+    @Bean SecurityFilterChain filterChain(HttpSecurity http, BearerAuthFilter bearer,
+                                          ApiRequestLoggingFilter requestLogger) throws Exception {
         return http.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/users", "/api/v1/auth/login", "/api/v1/auth/refresh").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(bearer, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(requestLogger, BearerAuthFilter.class)
                 .build();
     }
 }

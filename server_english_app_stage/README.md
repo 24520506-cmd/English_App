@@ -6,6 +6,23 @@ Run `mvn test` for unit tests. To also run HTTP and database integration tests, 
 
 Audio assets should use private object storage for files and PostgreSQL for metadata, approval state, checksums, and lesson-version references. The storage provider, signed URL policy, and retention settings need an operational decision before audio endpoints are added.
 
+## Learner onboarding preferences
+
+`GET /api/v1/me/preferences` and `PUT /api/v1/me/preferences` require a learner bearer token. PUT replaces the learner's band and ordered topic selection atomically. Before the first save, GET returns `{"band":null,"topic_ids":[]}`. The allowed band IDs are `BELOW_4_0`, `4_0_5_0`, `5_5_6_5`, and `7_0_PLUS`.
+
+Topic IDs are stable API identifiers; clients should display localized labels separately:
+
+| Topic ID | English label | Vietnamese label |
+|---|---|---|
+| `daily_life` | Daily Life | Đời sống hằng ngày |
+| `education` | Education | Giáo dục |
+| `technology` | Technology | Công nghệ |
+| `environment` | Environment | Môi trường |
+| `finance` | Finance | Tài chính |
+| `travel` | Travel | Du lịch |
+| `health` | Health | Sức khỏe |
+| `work` | Work | Công việc |
+
 ## SMS phone OTP
 
 Phone verification uses an approved eSMS brandname/template sent to the saved

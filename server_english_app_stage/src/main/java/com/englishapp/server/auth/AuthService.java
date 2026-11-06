@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AuthService {
     private static final Pattern USERNAME = Pattern.compile("[A-Za-z0-9_]{3,30}");
+    private static final Set<String> CONTENT_BANDS = Set.of("BELOW_4_0", "4_0_5_0", "5_5_6_5", "7_0_PLUS");
     private final JdbcTemplate db;
     private final PasswordEncoder passwords;
 
@@ -304,8 +307,46 @@ public class AuthService {
         String displayName = raw == null ? null : ((String) raw).trim().replaceAll("\\s+", " ");
         if (displayName != null && (displayName.isEmpty() || displayName.length() > 80
                 || displayName.chars().anyMatch(Character::isISOControl))) throw validationFailure();
-        db.update("UPDATE app_user SET display_name = ? WHERE user_id = ?", displayName, userId);
+        int updated = db.update("UPDATE app_user SET display_name = ? WHERE user_id = ?", displayName, userId);
+        if (updated != 1) throw invalidSession("SESSION_INVALID");
         return profile(userId);
+    }
+
+    public Map<String, Object> preferences(UUID userId) {
+        List<String> bands = db.query("SELECT band FROM learner_preferences WHERE user_id = ?",
+                (rs, ignored) -> rs.getString("band"), userId);
+        List<String> topicIds = db.query("SELECT topic_id FROM learner_preference_topic "
+                        + "WHERE user_id = ? ORDER BY position",
+                (rs, ignored) -> rs.getString("topic_id"), userId);
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("band", bands.isEmpty() ? null : bands.getFirst());
+        result.put("topic_ids", topicIds);
+        return result;
+    }
+
+    @Transactional
+    public Map<String, Object> updatePreferences(UUID userId, String band, List<String> topicIds) {
+        if (band == null || !CONTENT_BANDS.contains(band) || topicIds == null || topicIds.isEmpty()
+                || topicIds.size() > 8 || new HashSet<>(topicIds).size() != topicIds.size()
+                || topicIds.stream().anyMatch(id -> id == null || id.isBlank())) {
+            throw validationFailure();
+        }
+
+        String placeholders = String.join(",", java.util.Collections.nCopies(topicIds.size(), "?"));
+        List<String> knownTopics = db.query("SELECT topic_id FROM onboarding_topic WHERE topic_id IN ("
+                        + placeholders + ")",
+                (rs, ignored) -> rs.getString("topic_id"), topicIds.toArray());
+        if (knownTopics.size() != topicIds.size()) throw validationFailure();
+
+        db.update("INSERT INTO learner_preferences(user_id, band, updated_at) VALUES (?, ?, now()) "
+                        + "ON CONFLICT (user_id) DO UPDATE SET band = EXCLUDED.band, updated_at = EXCLUDED.updated_at",
+                userId, band);
+        db.update("DELETE FROM learner_preference_topic WHERE user_id = ?", userId);
+        for (int position = 0; position < topicIds.size(); position++) {
+            db.update("INSERT INTO learner_preference_topic(user_id, topic_id, position) VALUES (?, ?, ?)",
+                    userId, topicIds.get(position), position);
+        }
+        return preferences(userId);
     }
 
     private static ApiFailure validationFailure() {
