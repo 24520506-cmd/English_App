@@ -35,3 +35,10 @@ app:
     content-template: ${ESMS_OTP_CONTENT_TEMPLATE:[EnglishApp] Ma xac thuc cua ban la {code}}
   mail:
     from: ${GMAIL_USERNAME:}
+  google:
+    client-id: ${GOOGLE_CLIENT_ID:}
+    client-secret: ${GOOGLE_CLIENT_SECRET:}
+    callback-uri: ${GOOGLE_CALLBACK_URI:}
+    mobile-return-uri: "${GOOGLE_MOBILE_RETURN_URI:englishapp://auth/google-link}"
+    # Base64-encoded 32-byte AES key used to encrypt PKCE verifiers at rest.
+    pkce-encryption-key: ${GOOGLE_PKCE_ENCRYPTION_KEY:}

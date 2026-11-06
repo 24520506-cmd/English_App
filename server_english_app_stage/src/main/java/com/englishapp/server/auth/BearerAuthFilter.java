@@ -23,6 +23,10 @@ public class BearerAuthFilter extends OncePerRequestFilter {
 
     @Override protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getRequestURI();
+        if ("POST".equals(request.getMethod()) && (path.equals("/api/v1/auth/password-reset/challenges")
+                || path.matches("/api/v1/auth/password-reset/challenges/[^/]+/(resend|verify)")
+                || path.equals("/api/v1/auth/password-reset/complete"))) return true;
+        if ("GET".equals(request.getMethod()) && path.equals("/api/v1/auth/google-link/callback")) return true;
         if (!"POST".equals(request.getMethod())) return false;
         return path.equals("/api/v1/users") || path.equals("/api/v1/auth/login")
                 || path.equals("/api/v1/auth/refresh");

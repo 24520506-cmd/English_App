@@ -34,7 +34,9 @@ public class ApiRequestLoggingFilter extends OncePerRequestFilter {
     private static final Set<String> SENSITIVE_FIELDS = Set.of(
             "password", "currentpassword", "newpassword", "passwordhash", "accesstoken", "refreshtoken",
             "token", "otp", "otphash", "code", "verificationcode", "authorization", "cookie", "secret",
-            "clientsecret", "idtoken", "googletoken", "resetgrant", "grant");
+            "email", "phone", "contact", "newvalue",
+            "clientsecret", "idtoken", "googletoken", "resetgrant", "grant", "state", "nonce",
+            "authorizationurl", "codechallenge", "codeverifier");
 
     private final boolean includeBodies;
 
