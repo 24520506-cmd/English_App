@@ -32,7 +32,8 @@ public class SecurityConfig {
         return http.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/users", "/api/v1/auth/login", "/api/v1/auth/refresh").permitAll()
+                        .requestMatchers("/api/v1/users", "/api/v1/auth/login", "/api/v1/auth/refresh",
+                                "/api/v1/auth/password-reset/**", "/api/v1/auth/google-link/callback").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(bearer, UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(requestLogger, BearerAuthFilter.class)

@@ -295,7 +295,18 @@ public class AuthService {
     public Map<String, Object> profile(UUID userId) {
         User user = userById(userId);
         if (user == null) throw invalidSession("SESSION_INVALID");
-        return account(user);
+        Map<String, Object> result = account(user);
+        @SuppressWarnings("unchecked")
+        Map<String, Object> contacts = (Map<String, Object>) result.get("contacts");
+        Map<String, Object> pending = db.query("SELECT change_id,contact_kind,candidate_value,expires_at "
+                        + "FROM pending_contact_change WHERE user_id=? AND completed_at IS NULL "
+                        + "AND invalidated_at IS NULL AND expires_at>now() ORDER BY created_at DESC LIMIT 1",
+                (rs, ignored) -> Map.<String, Object>of("change_id", rs.getObject("change_id").toString(),
+                        "kind", rs.getString("contact_kind"), "masked_value", mask(rs.getString("candidate_value")),
+                        "expires_at", rs.getTimestamp("expires_at").toInstant().toString()), userId)
+                .stream().findFirst().orElse(null);
+        contacts.put("pending_change", pending);
+        return result;
     }
 
     @Transactional

@@ -1,6 +1,6 @@
 # English App backend
 
-Java 21, Spring Boot 4.1.2, PostgreSQL, Flyway, and Spring Security are configured. The User API currently includes registration, login, refresh-token rotation and reuse revocation, current session/profile, display-name update, password change, session list and revocation, logout, and an explicit activity signal. Password recovery, contact verification, Google/Zalo integration, admin endpoints, and lesson APIs remain separate later slices.
+Java 21, Spring Boot 4.1.2, PostgreSQL, Flyway, and Spring Security are configured. The User API includes registration, authentication/session management, profile/preferences, OTP password recovery, phone contact verification/change, Gmail contact change through Google OAuth, and Google account linking. Admin endpoints and lesson APIs remain separate slices.
 
 Run `mvn test` for unit tests. To also run HTTP and database integration tests, provide a disposable PostgreSQL database with `TEST_DATABASE_URL=jdbc:postgresql://host:port/database`, plus `TEST_DATABASE_USER` and `TEST_DATABASE_PASSWORD` if different from the defaults, then run `mvn test`. Flyway applies migrations to that test database. The integration tests are skipped when `TEST_DATABASE_URL` is absent.
 
@@ -42,3 +42,36 @@ Email verification uses Gmail SMTP. Set `GMAIL_USERNAME`, a 16-character
 `GMAIL_APP_PASSWORD`, and `OTP_HMAC_SECRET` (at least 32 random bytes). The
 endpoints create, resend, and verify a six-digit code without returning or
 logging the raw value.
+
+## Password recovery
+
+`POST /api/v1/auth/password-reset/challenges` accepts `channel`,
+`login_identifier`, and the saved `contact`. It always returns the same `202`
+message and an opaque `challenge_id`, whether the account matches or not.
+Resend and verify use that challenge ID; successful verification returns a
+five-minute, one-use `reset_grant`, which can only call
+`POST /api/v1/auth/password-reset/complete`. A successful reset revokes all
+sessions. Phone recovery currently uses the configured eSMS sender adapter;
+the `zalo` API channel does not configure a Zalo OA integration.
+
+## Contact changes and Google OAuth
+
+Phone changes use `POST /api/v1/me/contact-changes` with `kind: "phone"`,
+`new_value`, and `current_password`, then verify the OTP at
+`POST /api/v1/me/contact-changes/{change_id}/verify`. Email changes currently
+accept Gmail addresses only. Start one with `kind: "email"`; pass its returned
+`change_id` and `current_password` to `POST /api/v1/me/google-link/start` to get
+the Google authorization URL. Google's verified address must exactly match
+the pending candidate. The callback then commits the contact change and
+revokes all sessions.
+
+Configure these deployment variables for Google OAuth:
+
+- `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` from the Google OAuth client.
+- `GOOGLE_CALLBACK_URI`, an HTTPS redirect URI registered for that client.
+- `GOOGLE_MOBILE_RETURN_URI`, the app link/scheme opened after callback.
+- `GOOGLE_PKCE_ENCRYPTION_KEY`, a Base64-encoded random 32-byte AES key for
+  encrypting PKCE verifiers stored temporarily in PostgreSQL.
+
+Google OAuth remains unavailable until all variables are set. Do not commit
+provider secrets or encryption keys.
