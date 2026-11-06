@@ -9,8 +9,29 @@ spring:
     multipart:
       max-file-size: 20MB
       max-request-size: 20MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_USERNAME:}
+    password: ${GMAIL_APP_PASSWORD:}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
 server:
   port: ${PORT:8080}
 app:
   api-logging:
     include-bodies: ${API_BODY_LOGGING:false}
+  otp:
+    # At least 32 random bytes. Never commit the real value.
+    hmac-secret: ${OTP_HMAC_SECRET:}
+    ip-hour-limit: ${OTP_IP_HOUR_LIMIT:20}
+  esms:
+    api-key: ${ESMS_API_KEY:}
+    secret-key: ${ESMS_SECRET_KEY:}
+    brandname: ${ESMS_BRANDNAME:}
+    # Must exactly match the SMS template registered with the provider/carriers.
+    content-template: ${ESMS_OTP_CONTENT_TEMPLATE:[EnglishApp] Ma xac thuc cua ban la {code}}
+  mail:
+    from: ${GMAIL_USERNAME:}

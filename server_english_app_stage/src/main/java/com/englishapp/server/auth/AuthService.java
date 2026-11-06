@@ -141,7 +141,8 @@ public class AuthService {
             throw new ApiFailure("VALIDATION_ERROR", HttpStatus.BAD_REQUEST, "Thông tin đăng ký không hợp lệ.");
         if (email != null && (!email.matches("[^\\s@]+@[^\\s@]+\\.[^\\s@]+") || email.length() > 320))
             throw new ApiFailure("VALIDATION_ERROR", HttpStatus.BAD_REQUEST, "Email không hợp lệ.");
-        if (phone != null && !phone.matches("\\+?[0-9]{9,15}"))
+        phone = normalizePhone(phone);
+        if (phone != null && !phone.matches("\\+[1-9][0-9]{8,14}"))
             throw new ApiFailure("VALIDATION_ERROR", HttpStatus.BAD_REQUEST, "Số điện thoại không hợp lệ.");
         String normalized = username.toLowerCase(Locale.ROOT);
         if (userByName(normalized) != null)
@@ -154,6 +155,14 @@ public class AuthService {
             throw new ApiFailure("VALIDATION_ERROR", HttpStatus.BAD_REQUEST, "Tên đăng nhập đã được sử dụng.");
         }
         return account(userById(id));
+    }
+
+    static String normalizePhone(String phone) {
+        if (phone == null || phone.isBlank()) return null;
+        String compact = phone.trim().replaceAll("[ .()-]", "");
+        if (compact.matches("0[0-9]{9}")) return "+84" + compact.substring(1);
+        if (compact.matches("84[0-9]{9}")) return "+" + compact;
+        return compact;
     }
 
     private void countLoginRequest(String username, String ip, Instant now) {

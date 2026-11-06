@@ -22,3 +22,23 @@ Topic IDs are stable API identifiers; clients should display localized labels se
 | `travel` | Travel | Du lịch |
 | `health` | Health | Sức khỏe |
 | `work` | Work | Công việc |
+
+## SMS phone OTP
+
+Phone verification uses an approved eSMS brandname/template sent to the saved
+phone number. Configure these environment variables before starting the server:
+
+- `OTP_HMAC_SECRET`: at least 32 random bytes, used to protect OTP verification values.
+- `ESMS_API_KEY` and `ESMS_SECRET_KEY`: credentials from the eSMS account.
+- `ESMS_BRANDNAME`: registered SMS sender name.
+- `ESMS_OTP_CONTENT_TEMPLATE`: registered content containing `{code}`.
+
+The API never returns or logs the raw OTP. Without the eSMS credentials, creation
+returns `503 OTP_DELIVERY_FAILED` and leaves the phone unverified.
+
+## Gmail email OTP
+
+Email verification uses Gmail SMTP. Set `GMAIL_USERNAME`, a 16-character
+`GMAIL_APP_PASSWORD`, and `OTP_HMAC_SECRET` (at least 32 random bytes). The
+endpoints create, resend, and verify a six-digit code without returning or
+logging the raw value.
