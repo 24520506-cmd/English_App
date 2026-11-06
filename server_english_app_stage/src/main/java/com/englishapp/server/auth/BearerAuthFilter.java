@@ -32,28 +32,33 @@ public class BearerAuthFilter extends OncePerRequestFilter {
                                               FilterChain chain) throws ServletException, IOException {
         String header = request.getHeader("Authorization");
         if (header == null || !header.startsWith("Bearer ")) {
-            reject(response, "SESSION_INVALID", "Phiên không hợp lệ. Vui lòng đăng nhập lại.");
+            reject(request, response, "SESSION_INVALID", "Phiên không hợp lệ. Vui lòng đăng nhập lại.");
             return;
         }
         try {
             AuthService.User user = auth.authenticate(header.substring(7));
+            request.setAttribute(ApiRequestLoggingFilter.AUTHENTICATED_USER_ID_ATTRIBUTE, user.id().toString());
             var principal = new UsernamePasswordAuthenticationToken(user.id().toString(), null,
                     List.of(new SimpleGrantedAuthority("ROLE_" + user.role().toUpperCase(Locale.ROOT))));
             SecurityContextHolder.getContext().setAuthentication(principal);
             chain.doFilter(request, response);
         } catch (ApiFailure failure) {
-            reject(response, failure.code(), failure.getMessage());
+            reject(request, response, failure.code(), failure.getMessage());
         } finally {
             SecurityContextHolder.clearContext();
         }
     }
 
-    private void reject(HttpServletResponse response, String code, String message) throws IOException {
+    private void reject(HttpServletRequest request, HttpServletResponse response, String code, String message)
+            throws IOException {
+        String requestId = ApiRequestLoggingFilter.requestId(request);
+        request.setAttribute(ApiRequestLoggingFilter.ERROR_CODE_ATTRIBUTE, code);
         response.setStatus(401);
         response.setHeader("Cache-Control", "no-store");
+        response.setHeader("X-Request-Id", requestId);
         response.setCharacterEncoding(StandardCharsets.UTF_8.name());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.getWriter().write("{\"error\":{\"code\":\"" + code + "\",\"message\":\""
-                + message + "\",\"request_id\":\"" + ApiFailureHandler.requestId() + "\"}}");
+                + message + "\",\"request_id\":\"" + requestId + "\"}}");
     }
 }

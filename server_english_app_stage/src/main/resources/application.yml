@@ -11,3 +11,6 @@ spring:
       max-request-size: 20MB
 server:
   port: ${PORT:8080}
+app:
+  api-logging:
+    include-bodies: ${API_BODY_LOGGING:false}

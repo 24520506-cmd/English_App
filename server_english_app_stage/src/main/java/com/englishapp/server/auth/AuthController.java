@@ -2,6 +2,7 @@ package com.englishapp.server.auth;
 
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.Map;
+import java.util.List;
 import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpHeaders;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,7 @@ public class AuthController {
     public record LoginRequest(String username, String password, String device_label, String platform) { }
     public record RefreshRequest(String refresh_token) { }
     public record PasswordChangeRequest(String current_password, String new_password) { }
+    public record PreferencesRequest(String band, List<String> topic_ids) { }
 
     @PostMapping("/users")
     ResponseEntity<Map<String, Object>> register(@RequestBody RegisterRequest request) {
@@ -56,6 +59,23 @@ public class AuthController {
     @PatchMapping("/me")
     Map<String, Object> updateProfile(Authentication principal, @RequestBody Map<String, Object> changes) {
         return auth.updateProfile(UUID.fromString(principal.getName()), changes);
+    }
+
+    @GetMapping("/me/preferences")
+    Map<String, Object> preferences(Authentication principal) {
+        return auth.preferences(learnerId(principal));
+    }
+
+    @PutMapping("/me/preferences")
+    Map<String, Object> updatePreferences(Authentication principal, @RequestBody PreferencesRequest request) {
+        return auth.updatePreferences(learnerId(principal), request.band(), request.topic_ids());
+    }
+
+    private static UUID learnerId(Authentication principal) {
+        boolean learner = principal != null && principal.getAuthorities().stream()
+                .anyMatch(authority -> "ROLE_LEARNER".equals(authority.getAuthority()));
+        if (!learner) throw new ApiFailure("FORBIDDEN", HttpStatus.FORBIDDEN, "Không có quyền thực hiện thao tác này.");
+        return UUID.fromString(principal.getName());
     }
 
     @PostMapping("/me/password-change")
