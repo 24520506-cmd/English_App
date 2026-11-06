@@ -25,8 +25,9 @@ BEGIN
     PERFORM 1 FROM app_user WHERE user_id = attempt.user_id AND status = 'active' FOR UPDATE;
     IF NOT FOUND THEN RETURN FALSE; END IF;
     PERFORM 1 FROM user_session WHERE session_id = attempt.session_id AND user_id = attempt.user_id
-        AND revoked_at IS NULL AND now() < absolute_expires_at
-        AND now() < last_activity_at + (idle_timeout_seconds * interval '1 second') FOR UPDATE;
+        AND revoked_at IS NULL AND checked_at < access_expires_at
+        AND checked_at < absolute_expires_at
+        AND checked_at < last_activity_at + (idle_timeout_seconds * interval '1 second') FOR UPDATE;
     IF NOT FOUND THEN RETURN FALSE; END IF;
     PERFORM 1 FROM reauth_proof WHERE proof_id = attempt.reauth_proof_id
         AND user_id = attempt.user_id AND session_id = attempt.session_id
@@ -93,7 +94,8 @@ BEGIN
     IF NOT FOUND OR account_row.email IS NULL
         OR lower(btrim(account_row.email)) <> lower(btrim(p_verified_email)) THEN RETURN FALSE; END IF;
     PERFORM 1 FROM user_session WHERE session_id=attempt.session_id AND user_id=attempt.user_id
-        AND revoked_at IS NULL AND checked_at < absolute_expires_at
+        AND revoked_at IS NULL AND checked_at < access_expires_at
+        AND checked_at < absolute_expires_at
         AND checked_at < last_activity_at + (idle_timeout_seconds * interval '1 second') FOR UPDATE;
     IF NOT FOUND THEN RETURN FALSE; END IF;
     PERFORM 1 FROM reauth_proof WHERE proof_id=attempt.reauth_proof_id

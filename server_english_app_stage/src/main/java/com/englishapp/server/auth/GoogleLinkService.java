@@ -130,7 +130,8 @@ final class GoogleLinkService {
             GoogleAttempt attempt = db.query("SELECT a.attempt_id,a.user_id,a.session_id,a.state_hash,a.nonce_hash,"
                             + "a.pkce_verifier_ciphertext,a.pkce_encryption_nonce,a.redirect_uri,a.pending_change_id,"
                             + "a.expires_at,"
-                            + "a.consumed_at,s.last_activity_at,s.absolute_expires_at,s.idle_timeout_seconds,"
+                            + "a.consumed_at,s.last_activity_at,s.absolute_expires_at,s.access_expires_at,"
+                            + "s.idle_timeout_seconds,"
                             + "s.revoked_at,u.email,u.status "
                             + "FROM google_link_attempt a JOIN user_session s ON s.session_id=a.session_id "
                             + "JOIN app_user u ON u.user_id=a.user_id WHERE a.state_hash=? FOR UPDATE OF a,s,u",
@@ -142,7 +143,8 @@ final class GoogleLinkService {
                             rs.getTimestamp("expires_at").toInstant(),
                             rs.getTimestamp("consumed_at") == null ? null : rs.getTimestamp("consumed_at").toInstant(),
                             rs.getTimestamp("last_activity_at").toInstant(),
-                            rs.getTimestamp("absolute_expires_at").toInstant(), rs.getInt("idle_timeout_seconds"),
+                            rs.getTimestamp("absolute_expires_at").toInstant(),
+                            rs.getTimestamp("access_expires_at").toInstant(), rs.getInt("idle_timeout_seconds"),
                             rs.getTimestamp("revoked_at") == null ? null : rs.getTimestamp("revoked_at").toInstant(),
                             rs.getString("email"), rs.getString("status")),
                     TokenCodec.sha256(state)).stream().findFirst().orElse(null);
@@ -321,11 +323,12 @@ final class GoogleLinkService {
 
     private record GoogleAttempt(UUID id, UUID userId, UUID sessionId, String stateHash, String nonceHash,
             byte[] encryptedVerifier, byte[] encryptionNonce, String redirectUri, UUID pendingChangeId,
-            Instant expiresAt, Instant consumedAt, Instant lastActivity, Instant absoluteExpiry, int idleTimeoutSeconds,
-            Instant revokedAt, String email, String status) {
+            Instant expiresAt, Instant consumedAt, Instant lastActivity, Instant absoluteExpiry, Instant accessExpiry,
+            int idleTimeoutSeconds, Instant revokedAt, String email, String status) {
         boolean isSessionLive() {
             Instant now = Instant.now();
-            return "active".equals(status) && revokedAt == null && now.isBefore(absoluteExpiry)
+            return "active".equals(status) && revokedAt == null && now.isBefore(accessExpiry)
+                    && now.isBefore(absoluteExpiry)
                     && now.isBefore(lastActivity.plusSeconds(idleTimeoutSeconds));
         }
     }
