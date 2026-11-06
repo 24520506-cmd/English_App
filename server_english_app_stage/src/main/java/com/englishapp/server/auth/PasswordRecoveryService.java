@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-final class PasswordRecoveryService {
+class PasswordRecoveryService {
     private static final String GENERIC_MESSAGE =
             "Nếu thông tin phù hợp, mã khôi phục sẽ được gửi qua kênh đã chọn";
 

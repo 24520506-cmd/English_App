@@ -31,7 +31,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import tools.jackson.databind.json.JsonMapper;
 
 @Service
-final class GoogleLinkService {
+class GoogleLinkService {
     private static final JsonMapper JSON = JsonMapper.builder().build();
     private static final SecureRandom RANDOM = new SecureRandom();
     private static final String AUTHORIZATION_ENDPOINT = "https://accounts.google.com/o/oauth2/v2/auth";

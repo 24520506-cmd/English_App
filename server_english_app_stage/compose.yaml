@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-english_app}
+      POSTGRES_USER: ${POSTGRES_USER:-english_app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-english_app_local}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB:-english_app}
+      DATABASE_USER: ${POSTGRES_USER:-english_app}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-english_app_local}
+      PORT: ${PORT:-8080}
+      CONTENT_DATA_DIR: ${CONTENT_DATA_DIR:-/data/lessons}
+      OTP_HMAC_SECRET: ${OTP_HMAC_SECRET:-local-development-secret-change-me-123456}
+      GMAIL_USERNAME: ${GMAIL_USERNAME:-}
+      GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD:-}
+      ESMS_API_KEY: ${ESMS_API_KEY:-}
+      ESMS_SECRET_KEY: ${ESMS_SECRET_KEY:-}
+      ESMS_BRANDNAME: ${ESMS_BRANDNAME:-}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GOOGLE_CALLBACK_URI: ${GOOGLE_CALLBACK_URI:-}
+      GOOGLE_MOBILE_RETURN_URI: ${GOOGLE_MOBILE_RETURN_URI:-englishapp://auth/google-link}
+      GOOGLE_PKCE_ENCRYPTION_KEY: ${GOOGLE_PKCE_ENCRYPTION_KEY:-}
+    volumes:
+      - ${HOST_CONTENT_DATA_DIR:-../test-data/drive}:/data/lessons:ro
+    ports:
+      - "${PORT:-8080}:${PORT:-8080}"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

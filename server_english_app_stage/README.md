@@ -4,7 +4,61 @@ Java 21, Spring Boot 4.1.2, PostgreSQL, Flyway, and Spring Security are configur
 
 Run `mvn test` for unit tests. To also run HTTP and database integration tests, provide a disposable PostgreSQL database with `TEST_DATABASE_URL=jdbc:postgresql://host:port/database`, plus `TEST_DATABASE_USER` and `TEST_DATABASE_PASSWORD` if different from the defaults, then run `mvn test`. Flyway applies migrations to that test database. The integration tests are skipped when `TEST_DATABASE_URL` is absent.
 
-Audio assets should use private object storage for files and PostgreSQL for metadata, approval state, checksums, and lesson-version references. The storage provider, signed URL policy, and retention settings need an operational decision before audio endpoints are added.
+The current test/development setup serves audio from a read-only mounted directory.
+Before production scale-out, move those files to private object storage and keep
+metadata, approval state, checksums, and lesson-version references in PostgreSQL.
+The storage provider, signed-URL policy, and retention settings still need an
+operational decision.
+
+## Docker, local data, and VPS deployment
+
+The repository includes a multi-stage Java 21 `Dockerfile` and `compose.yaml` for
+the API plus PostgreSQL 17. Flyway creates and upgrades the database. Lesson JSON
+is stored as `jsonb`; WAV files remain on the mounted filesystem and are streamed
+by the API.
+
+Download the current test dataset (12 JSON and 12 WAV files) and start the stack:
+
+```bash
+cd server_english_app_stage
+./scripts/download-test-data.sh
+cp .env.example .env
+# Set strong POSTGRES_PASSWORD and OTP_HMAC_SECRET values in .env.
+docker compose up --build -d
+docker compose logs -f api
+```
+
+By default Compose mounts `../test-data/drive` read-only at `/data/lessons`.
+Override the host location with `HOST_CONTENT_DATA_DIR=/absolute/path`. The API
+imports or refreshes every JSON file idempotently at startup. Source-relative
+paths are used as stable keys because the supplied dataset contains a duplicate
+`lesson_id` and several schema variants.
+
+Authenticated learner endpoints are:
+
+- `GET /api/v1/lessons?band=...&topic=...`
+- `GET /api/v1/lessons/{content_id}`
+- `GET /api/v1/lessons/{content_id}/audio`
+
+For a VPS, install Docker Engine with the Compose plugin, clone the repository,
+download or copy the lesson directory, create `.env` from `.env.example`, then
+run `docker compose up --build -d`. Keep PostgreSQL unexposed (the supplied
+Compose file does), allow only the API/reverse-proxy ports through the firewall,
+and terminate HTTPS through a reverse proxy. Back up the named
+`postgres_data` volume and the external lesson directory separately.
+
+To run all tests without installing Maven locally, while the Compose database is
+running, create a disposable test database and run Maven on the Compose network:
+
+```bash
+docker compose exec db createdb -U english_app english_app_test
+docker run --rm --network server_english_app_stage_default \
+  -v "$PWD:/workspace" -w /workspace \
+  -e TEST_DATABASE_URL=jdbc:postgresql://db:5432/english_app_test \
+  -e TEST_DATABASE_USER=english_app \
+  -e TEST_DATABASE_PASSWORD="$POSTGRES_PASSWORD" \
+  maven:3.9.11-eclipse-temurin-21 mvn -B clean test
+```
 
 ## Learner onboarding preferences
 

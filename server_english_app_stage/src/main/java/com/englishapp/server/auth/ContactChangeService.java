@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-final class ContactChangeService {
+class ContactChangeService {
     private final JdbcTemplate db;
     private final PasswordEncoder passwords;
     private final OtpProof proof;

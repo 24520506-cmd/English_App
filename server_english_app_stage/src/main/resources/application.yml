@@ -21,6 +21,8 @@ spring:
 server:
   port: ${PORT:8080}
 app:
+  content:
+    data-dir: ${CONTENT_DATA_DIR:}
   api-logging:
     include-bodies: ${API_BODY_LOGGING:false}
   otp:
