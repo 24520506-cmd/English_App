@@ -23,6 +23,10 @@ public class BearerAuthFilter extends OncePerRequestFilter {
 
     @Override protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getRequestURI();
+        if (path.equals("/swagger-ui.html") || path.startsWith("/swagger-ui/")
+                || path.equals("/v3/api-docs") || path.startsWith("/v3/api-docs/")) return true;
+        if ("GET".equals(request.getMethod())
+                && (path.equals("/api/v1/topics") || path.equals("/api/v1/bands"))) return true;
         if ("POST".equals(request.getMethod()) && (path.equals("/api/v1/auth/password-reset/challenges")
                 || path.matches("/api/v1/auth/password-reset/challenges/[^/]+/(resend|verify)")
                 || path.equals("/api/v1/auth/password-reset/complete"))) return true;

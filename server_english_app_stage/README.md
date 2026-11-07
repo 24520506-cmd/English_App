@@ -17,28 +17,34 @@ the API plus PostgreSQL 17. Flyway creates and upgrades the database. Lesson JSO
 is stored as `jsonb`; WAV files remain on the mounted filesystem and are streamed
 by the API.
 
-Download the current test dataset (12 JSON and 12 WAV files) and start the stack:
+The current workspace dataset is in `../English_App/datasets` relative to this
+directory. Start the stack with that dataset:
 
 ```bash
 cd server_english_app_stage
-./scripts/download-test-data.sh
 cp .env.example .env
 # Set strong POSTGRES_PASSWORD and OTP_HMAC_SECRET values in .env.
+docker compose config --quiet
 docker compose up --build -d
 docker compose logs -f api
 ```
 
-By default Compose mounts `../test-data/drive` read-only at `/data/lessons`.
-Override the host location with `HOST_CONTENT_DATA_DIR=/absolute/path`. The API
-imports or refreshes every JSON file idempotently at startup. Source-relative
-paths are used as stable keys because the supplied dataset contains a duplicate
-`lesson_id` and several schema variants.
+The example environment file sets `HOST_CONTENT_DATA_DIR=../English_App/datasets`
+and Compose mounts it read-only at `/data/lessons`. Change that variable if your
+dataset is stored elsewhere. The API imports or refreshes every JSON file
+idempotently at startup. Source-relative paths are used as stable keys because
+the supplied dataset contains a duplicate `lesson_id` and several schema
+variants.
 
-Authenticated learner endpoints are:
+Topic catalog and learner endpoints are:
 
+- `GET /api/v1/topics` (public; returns topic-folder IDs from imported lessons, with labels in display order)
+- `GET /api/v1/bands` (public; returns band IDs from imported lessons, with labels in display order)
 - `GET /api/v1/lessons?band=...&topic=...`
 - `GET /api/v1/lessons/{content_id}`
 - `GET /api/v1/lessons/{content_id}/audio`
+- `GET /api/v1/me/lessons/{content_id}/progress` (learner bearer token; returns both stage flags)
+- `PUT /api/v1/me/lessons/{content_id}/progress/{stage_id}` with `{ "completed": true }`; `stage_id` is `stage_1` or `stage_2`
 
 For a VPS, install Docker Engine with the Compose plugin, clone the repository,
 download or copy the lesson directory, create `.env` from `.env.example`, then
@@ -62,7 +68,7 @@ docker run --rm --network server_english_app_stage_default \
 
 ## Learner onboarding preferences
 
-`GET /api/v1/me/preferences` and `PUT /api/v1/me/preferences` require a learner bearer token. PUT replaces the learner's band and ordered topic selection atomically. Before the first save, GET returns `{"band":null,"topic_ids":[]}`. The allowed band IDs are `BELOW_4_0`, `4_0_5_0`, `5_5_6_5`, and `7_0_PLUS`.
+`GET /api/v1/me/preferences` and `PUT /api/v1/me/preferences` require a learner bearer token. PUT replaces the learner's band and ordered topic selection atomically. Before the first save, GET returns `{"band":null,"topic_ids":[]}`. Use the `id` values from `GET /api/v1/bands` and `GET /api/v1/topics`; the preferences API accepts only active values present in the imported lesson database.
 
 Topic IDs are stable API identifiers; clients should display localized labels separately:
 

@@ -42,6 +42,20 @@ class UserApiPostgresIntegrationTest {
         // All embedded-server test requests originate from 127.0.0.1. Keep the
         // production IP throttle intact while isolating each integration test.
         db.update("DELETE FROM login_ip_request WHERE ip_address = '127.0.0.1'");
+        db.update("INSERT INTO onboarding_topic(topic_id,label,sort_order,active) VALUES "
+                        + "('daily_life','Daily Life',1,TRUE),('education','Education',2,TRUE),"
+                        + "('technology','Technology',3,TRUE),('environment','Environment',4,TRUE),"
+                        + "('finance','Finance',5,TRUE),('travel','Travel',6,TRUE),"
+                        + "('health','Health',7,TRUE),('work','Work',8,TRUE) "
+                        + "ON CONFLICT (topic_id) DO UPDATE SET label=EXCLUDED.label, "
+                        + "sort_order=EXCLUDED.sort_order, active=TRUE");
+        db.update("INSERT INTO onboarding_band(band_id,label,sort_order,active) VALUES "
+                        + "('BELOW_4_0','Below 4.0',30000,TRUE),('4_0_5_0','4.0–5.0',30001,TRUE),"
+                        + "('5_5_6_5','5.5–6.5',30002,TRUE),('7_0_PLUS','7.0+',30003,TRUE) "
+                        + "ON CONFLICT (band_id) DO UPDATE SET label=EXCLUDED.label, "
+                        + "sort_order=EXCLUDED.sort_order, active=TRUE");
+        db.update("UPDATE onboarding_topic SET active = TRUE");
+        db.update("UPDATE onboarding_band SET active = TRUE");
     }
 
     private HttpResponse<String> request(String method, String path, String token, String body) throws Exception {
@@ -125,6 +139,82 @@ class UserApiPostgresIntegrationTest {
         assertEquals(200, replacedA.statusCode(), replacedA.body());
         assertEquals("5_5_6_5", JsonPath.read(replacedA.body(), "$.band"));
         assertEquals(List.of("travel"), JsonPath.read(replacedA.body(), "$.topic_ids"));
+    }
+
+    @Test void publicTopicCatalogReturnsOnlyTopicsThatPreferencesAccept() throws Exception {
+        db.update("UPDATE onboarding_topic SET active = FALSE");
+        String topicId = "integration_" + UUID.randomUUID().toString().replace("-", "");
+        String label = "Integration " + topicId.substring("integration_".length());
+        db.update("INSERT INTO onboarding_topic(topic_id,label,sort_order,active) "
+                        + "SELECT ?, ?, COALESCE(MAX(sort_order),0)+1, TRUE FROM onboarding_topic",
+                topicId, label);
+
+        HttpResponse<String> catalog = request("GET", "/topics", null, null);
+        assertEquals(200, catalog.statusCode(), catalog.body());
+        assertTrue(catalog.body().contains("\"id\":\"" + topicId + "\""));
+        assertFalse(catalog.body().contains("\"id\":\"daily_life\""));
+
+        String username = register();
+        String access = JsonPath.read(login(username, "topic-catalog").body(), "$.access_token");
+        HttpResponse<String> saved = request("PUT", "/me/preferences", access,
+                "{\"band\":\"5_5_6_5\",\"topic_ids\":[\"" + topicId + "\"]}");
+        assertEquals(200, saved.statusCode(), saved.body());
+        assertEquals(List.of(topicId), JsonPath.read(saved.body(), "$.topic_ids"));
+    }
+
+    @Test void publicBandCatalogReturnsBandsAcceptedByPreferences() throws Exception {
+        db.update("UPDATE onboarding_band SET active = FALSE");
+        String bandId = "test_band_" + UUID.randomUUID().toString().replace("-", "");
+        String label = "Test band " + bandId.substring("test_band_".length());
+        db.update("INSERT INTO onboarding_band(band_id,label,sort_order,active) "
+                        + "SELECT ?, ?, COALESCE(MAX(sort_order),0)+1, TRUE FROM onboarding_band",
+                bandId, label);
+
+        HttpResponse<String> catalog = request("GET", "/bands", null, null);
+        assertEquals(200, catalog.statusCode(), catalog.body());
+        assertTrue(catalog.body().contains("\"id\":\"" + bandId + "\""));
+        assertFalse(catalog.body().contains("\"id\":\"BELOW_4_0\""));
+
+        String username = register();
+        String access = JsonPath.read(login(username, "band-catalog").body(), "$.access_token");
+        HttpResponse<String> saved = request("PUT", "/me/preferences", access,
+                "{\"band\":\"" + bandId + "\",\"topic_ids\":[\"daily_life\"]}");
+        assertEquals(200, saved.statusCode(), saved.body());
+        assertEquals(bandId, JsonPath.read(saved.body(), "$.band"));
+    }
+
+    @Test void lessonStageProgressIsOwnedByLearnerAndLesson() throws Exception {
+        UUID contentId = UUID.randomUUID();
+        db.update("INSERT INTO lesson_content(content_id,source_key,lesson_id,version,title,band,band_id,topic,"
+                        + "topic_id,status,payload,audio_relative_path,payload_checksum_sha256) "
+                        + "VALUES (?,?,?,?,?,?,?,?,?,?,?::jsonb,?,?)",
+                contentId, "test/progress/" + contentId + ".json", "progress-test", 1, "Progress test",
+                "5.5-6.0", "5_5_6_0", "Personal Finance", "financial", "published", "{}", null, "a".repeat(64));
+
+        String userA = register();
+        String userB = register();
+        String accessA = JsonPath.read(login(userA, "progress-A").body(), "$.access_token");
+        String accessB = JsonPath.read(login(userB, "progress-B").body(), "$.access_token");
+        String progressPath = "/me/lessons/" + contentId + "/progress";
+
+        assertEquals(401, request("GET", progressPath, null, null).statusCode());
+        HttpResponse<String> initial = request("GET", progressPath, accessA, null);
+        assertEquals(200, initial.statusCode(), initial.body());
+        assertFalse((Boolean) JsonPath.read(initial.body(), "$.stages.stage_1"));
+        assertFalse((Boolean) JsonPath.read(initial.body(), "$.stages.stage_2"));
+
+        String stage1 = progressPath + "/stage_1";
+        String stage2 = progressPath + "/stage_2";
+        assertEquals(200, request("PUT", stage1, accessA, "{\"completed\":true}").statusCode());
+        assertEquals(200, request("PUT", stage2, accessA, "{\"completed\":true}").statusCode());
+        assertTrue((Boolean) JsonPath.read(request("GET", progressPath, accessA, null).body(), "$.stages.stage_1"));
+        assertTrue((Boolean) JsonPath.read(request("GET", progressPath, accessA, null).body(), "$.stages.stage_2"));
+        assertFalse((Boolean) JsonPath.read(request("GET", progressPath, accessB, null).body(), "$.stages.stage_1"));
+
+        assertEquals(200, request("PUT", stage1, accessA, "{\"completed\":false}").statusCode());
+        assertFalse((Boolean) JsonPath.read(request("GET", progressPath, accessA, null).body(), "$.stages.stage_1"));
+        assertEquals(400, request("PUT", progressPath + "/unknown", accessA,
+                "{\"completed\":true}").statusCode());
     }
 
     @Test void preferencesRejectInvalidBandAndTopicWithoutReplacingSavedChoices() throws Exception {

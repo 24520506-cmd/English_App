@@ -33,7 +33,10 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/users", "/api/v1/auth/login", "/api/v1/auth/refresh",
-                                "/api/v1/auth/password-reset/**", "/api/v1/auth/google-link/callback").permitAll()
+                                "/api/v1/auth/password-reset/**", "/api/v1/auth/google-link/callback",
+                                "/api/v1/topics", "/api/v1/bands",
+                                "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs", "/v3/api-docs/**")
+                        .permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(bearer, UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(requestLogger, BearerAuthFilter.class)

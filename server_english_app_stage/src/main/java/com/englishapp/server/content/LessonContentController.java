@@ -39,10 +39,11 @@ public class LessonContentController {
     @GetMapping
     Map<String, Object> list(@RequestParam(required = false) String band,
             @RequestParam(required = false) String topic) {
-        List<Map<String, Object>> lessons = db.query("SELECT content_id,lesson_id,version,title,band,topic,status,"
+        List<Map<String, Object>> lessons = db.query("SELECT content_id,lesson_id,version,title,band,band_id,topic,topic_id,status,"
                         + "audio_relative_path IS NOT NULL AS has_audio FROM lesson_content "
-                        + "WHERE (?::varchar IS NULL OR band=?::varchar) "
-                        + "AND (?::varchar IS NULL OR lower(topic)=lower(?::varchar)) ORDER BY band,title",
+                        + "WHERE (?::varchar IS NULL OR band=?::varchar OR band_id=?::varchar) "
+                        + "AND (?::varchar IS NULL OR topic_id=?::varchar OR lower(topic)=lower(?::varchar)) "
+                        + "ORDER BY band,title",
                 (rs, ignored) -> {
                     Map<String, Object> item = new LinkedHashMap<>();
                     item.put("content_id", rs.getObject("content_id").toString());
@@ -50,11 +51,13 @@ public class LessonContentController {
                     item.put("version", rs.getInt("version"));
                     item.put("title", rs.getString("title"));
                     item.put("band", rs.getString("band"));
+                    item.put("band_id", rs.getString("band_id"));
                     item.put("topic", rs.getString("topic"));
+                    item.put("topic_id", rs.getString("topic_id"));
                     item.put("status", rs.getString("status"));
                     item.put("has_audio", rs.getBoolean("has_audio"));
                     return item;
-                }, band, band, topic, topic);
+                }, band, band, band, topic, topic, topic);
         return Map.of("lessons", lessons);
     }
 
